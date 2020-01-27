@@ -8,7 +8,7 @@ Code Snippets of various languages written or collected by Metaspook.
 function html_escape($str){ return '<pre>'.$str.'</pre>';}
 
 // Escape string value for use in XML.
-// Usages: html_escape("Replace string/variable here")
+// Usages: xml_escape("Replace string/variable here")
 function xml_escape($str){ return htmlspecialchars(preg_replace('#[\x00-\x08\x0B\x0C\x0E-\x1F]+#','',$str),ENT_QUOTES);}
 
 // Escape string value for use in JavaScript.
