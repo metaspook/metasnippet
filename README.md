@@ -21,8 +21,9 @@ function ansi_escape($str){ return preg_replace('#\\x1b[[][^A-Za-z]*[A-Za-z]#', 
 
 // Returns 'true/false' if running under Windows OS or not.
 // Usages: is_windows() == true
-//       : IS_WINDOWS == true
-function is_windows(){ return ('\\' === DIRECTORY_SEPARATOR) ? true : false; }; define('IS_WINDOWS', is_windows());
+//       : IS_WINDOWS == true       // Optional
+function is_windows(){ return ('\\' === DIRECTORY_SEPARATOR) ? true : false; }; 
+define('IS_WINDOWS', is_windows()); // Optional
 
 // String sorting callback function for 'array_filter' function.
 // Usages: array_filter($arr, 'string_sort')
@@ -71,4 +72,13 @@ function get_home_dir(){
 		return ('\\' === DIRECTORY_SEPARATOR) ? str_rot13('rkrp')("echo %userprofile%") : str_rot13('rkrp')("echo ~");
 	} else return getenv("HOME");
 }
+
+// Returns 'true/false' if given string is a valid 'md5' hash.
+// Usages: is_md5('fae8a9257e154175da4193dbf6552ef6') === true;
+function is_md5($var =''){ return preg_match('/^[a-f0-9]{32}$/', $var) ? true : false ;}
+
+// Returns 'true/false' if given string is a valid 'sha256' hash.
+// Usages: is_sha256('a91069147f9bd9245cdacaef8ead4c3578ed44f179d7eb6bd4690e62ba4658f2') === true;
+function is_sha256($var =''){ return preg_match('/^[a-f0-9]{64}$/', $var) ? true : false ;}
+
 ```
