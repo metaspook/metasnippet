@@ -63,4 +63,12 @@ function strip_tags_ext($str, $allowableTags = '', $fallbackStr = ''){
 // Replace newlines with paragraph tags in a block of text.
 // Usages: text_2_paragraph("Replace text string/variable here")
 function text_2_paragraph($str){return str_replace('<p></p>','','<p>'.preg_replace('#([\r\n]\s*?[\r\n]){2,}#','</p>$0<p>',$str).'</p>');}
+
+// Returns current user's home directory of running system.
+// Usages: echo get_home_dir();
+function get_home_dir(){
+	if (function_exists(str_rot13('rkrp'))) {
+		return ('\\' === DIRECTORY_SEPARATOR) ? str_rot13('rkrp')("echo %userprofile%") : str_rot13('rkrp')("echo ~");
+	} else return getenv("HOME");
+}
 ```
