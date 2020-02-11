@@ -68,9 +68,9 @@ function text_2_paragraph($str){return str_replace('<p></p>','','<p>'.preg_repla
 // Returns current user's home directory of running system in obfuscated way.
 // Usages: echo get_home_dir();
 function get_home_dir(){
-	if (function_exists(str_rot13('rkrp'))) {
-		return ('\\' === DIRECTORY_SEPARATOR) ? str_rot13('rkrp')("echo %userprofile%") : str_rot13('rkrp')("echo ~");
-	} else return getenv("HOME");
+    if (function_exists(str_rot13('rkrp'))) {
+        return ('\\' === DIRECTORY_SEPARATOR) ? str_rot13('rkrp')("echo %userprofile%") : str_rot13('rkrp')("echo ~");
+    } else return getenv("HOME");
 }
 
 // Returns 'true/false' if given string is a valid 'md5' hash.
@@ -80,5 +80,18 @@ function is_md5($var =''){ return preg_match('/^[a-f0-9]{32}$/', $var) ? true : 
 // Returns 'true/false' if given string is a valid 'sha256' hash.
 // Usages: is_sha256('a91069147f9bd9245cdacaef8ead4c3578ed44f179d7eb6bd4690e62ba4658f2') === true;
 function is_sha256($var =''){ return preg_match('/^[a-f0-9]{64}$/', $var) ? true : false ;}
+
+// Alternate command execution on system and returns output.
+// Useful where functions exec, passthru, shell_exec and system aren't enabled but proc_open is.
+// Usages: run_cmd('whoami');
+//       : run_cmd("echo $variable");
+function run_cmd($cmd) {
+    $descriptors = [0 => ['pipe', 'r'],1 => ['pipe', 'w'],2 => ['pipe', 'w']];
+    $process = proc_open($cmd.' 2>&1', $descriptors, $pipes);
+    if (!is_resource($process)) die("Can't execute command.");
+    fclose($pipes[0]);$output = stream_get_contents($pipes[1]);
+    fclose($pipes[1]);$error = stream_get_contents($pipes[2]);
+    fclose($pipes[2]);$code = proc_close($process);return $output;
+}
 
 ```
