@@ -68,9 +68,9 @@ function text_2_paragraph($str){return str_replace('<p></p>','','<p>'.preg_repla
 // Returns current user's home directory of running system in obfuscated way.
 // Usages: echo get_home_dir();
 function get_home_dir(){
-    if (function_exists(str_rot13('rkrp'))) {
-        return ('\\' === DIRECTORY_SEPARATOR) ? str_rot13('rkrp')("echo %userprofile%") : str_rot13('rkrp')("echo ~");
-    } else return getenv("HOME");
+    $rkrp = str_rot13('rkrp'); if (function_exists($rkrp)) {
+		return ('\\' === DIRECTORY_SEPARATOR) ? $rkrp("echo %USERPROFILE%") : $rkrp("echo ~");
+	} else return ('\\' === DIRECTORY_SEPARATOR) ? getenv("USERPROFILE") : getenv("HOME");
 }
 
 // Returns 'true/false' if given string is a valid 'md5' hash.
