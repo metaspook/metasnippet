@@ -95,3 +95,10 @@ function run_cmd($cmd) {
 }
 
 ```
+
+### Batch Script
+```batch
+:: Prints list of semicolon separated paths.
+echo %path:;=&echo.%
+
+```
