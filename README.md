@@ -1,5 +1,5 @@
 # Metasnippet
-Code Snippets of various languages written or collected by Metaspook.
+Code Snippets of various Languages/Commands written or collected by Metaspook.
 
 ### PHP
 ```php
@@ -101,4 +101,19 @@ function run_cmd($cmd) {
 :: Prints list of semicolon separated paths.
 echo %path:;=&echo.%
 
+```
+
+### VirtualBox
+* Change the UUID of Virtual Disk | Windows
+```console
+c:\> cd "C:\Program Files\Oracle\VirtualBox\"
+c:\> VBoxManage.exe internalcommands sethduuid "D:\NewVM\myDisk1.vdi"
+```
+* Change the UUID of Virtual Disk | Linux
+```console
+~$ VBoxManage internalcommands sethduuid "/var/vdisks/myDisk1.vdi"
+```
+* Clone VDI Disk
+```console
+~$ VBoxManage clonevdi myDisk1.vdi cloneDisk.vdi
 ```
