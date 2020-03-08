@@ -104,16 +104,19 @@ echo %path:;=&echo.%
 ```
 
 ### VirtualBox
-* Change the UUID of Virtual Disk | Windows
+--- In Windows use this command first.
 ```console
-c:\> cd "C:\Program Files\Oracle\VirtualBox\"
-c:\> VBoxManage.exe internalcommands sethduuid "D:\NewVM\myDisk1.vdi"
+pushd "C:\Program Files\Oracle\VirtualBox"
 ```
-* Change the UUID of Virtual Disk | Linux
+* Change the UUID of Virtual Disk
 ```console
-~$ VBoxManage internalcommands sethduuid "/var/vdisks/myDisk1.vdi"
+VBoxManage internalcommands sethduuid "/var/vdisks/myDisk1.vdi"
 ```
 * Clone VDI Disk
 ```console
-~$ VBoxManage clonevdi myDisk1.vdi cloneDisk.vdi
+VBoxManage clonevdi myDisk1.vdi cloneDisk.vdi
+```
+* Enable Nested VT-x/AMD-V for Intel VT-x supported CPU.
+```console
+VBoxManage modifyvm "Your VM Name" --nested-hw-virt on
 ```
