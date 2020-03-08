@@ -106,7 +106,7 @@ echo %path:;=&echo.%
 ### VirtualBox
 --- In Windows use this command first.
 ```console
-pushd "C:\Program Files\Oracle\VirtualBox"
+pushd "%PROGRAMFILES%\Oracle\VirtualBox"
 ```
 * Change the UUID of Virtual Disk
 ```console
