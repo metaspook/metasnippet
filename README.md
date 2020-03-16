@@ -122,7 +122,7 @@ VBoxManage modifyvm "Your VM Name" --nested-hw-virt on
 ```
 
 ### Kali Linux
-```console
+```shell
 # [Re]set my password for Root user.
 sudo passwd root
 
