@@ -120,3 +120,12 @@ VBoxManage clonevdi myDisk1.vdi cloneDisk.vdi
 ```console
 VBoxManage modifyvm "Your VM Name" --nested-hw-virt on
 ```
+
+### Kali Linux
+```console
+# [Re]set my password for Root user.
+sudo passwd root
+
+# Restore legacy Kali Root User Policy in v2020.1+.
+sudo apt update && sudo apt install -y kali-grant-root
+```
