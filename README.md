@@ -129,3 +129,38 @@ sudo passwd root
 # Restore legacy Kali Root User Policy in v2020.1+.
 sudo apt update && sudo apt install -y kali-grant-root
 ```
+
+### Laravel
+* Application Debug Blacklist [add below code to "/laravel/config/app.php" file.]
+```php
+/*
+    |--------------------------------------------------------------------------
+    | Application Debug Blacklist
+    |--------------------------------------------------------------------------
+    |
+    | When an exception is uncaught and the APP_DEBUG environment variable is 
+    | true, the debug page will show all environment variables and their 
+    | contents. In some cases you may want to obscure certain variables.
+    |
+    */
+
+    'debug_blacklist' => [
+        '_ENV' => [
+            'APP_KEY',
+            'DB_PASSWORD',
+            'REDIS_PASSWORD',
+            'MAIL_PASSWORD',
+        ],
+
+        '_SERVER' => [
+            'APP_KEY',
+            'DB_PASSWORD',
+            'REDIS_PASSWORD',
+            'MAIL_PASSWORD',
+        ],
+
+        '_POST' => [
+            'password',
+        ],
+    ],
+```
