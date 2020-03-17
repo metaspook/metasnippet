@@ -108,7 +108,7 @@ echo %path:;=&echo.%
 :: In Windows use this command first.
 pushd "%PROGRAMFILES%\Oracle\VirtualBox"
 ```
-```shell
+```shellscript
 # Change the UUID of Virtual Disk
 VBoxManage internalcommands sethduuid "/var/vdisks/myDisk1.vdi"
 
