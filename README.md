@@ -104,20 +104,17 @@ echo %path:;=&echo.%
 ```
 
 ### VirtualBox
---- In Windows use this command first.
 ```console
+# In Windows use this command first.
 pushd "%PROGRAMFILES%\Oracle\VirtualBox"
-```
-* Change the UUID of Virtual Disk
-```console
+
+# Change the UUID of Virtual Disk
 VBoxManage internalcommands sethduuid "/var/vdisks/myDisk1.vdi"
-```
-* Clone VDI Disk
-```console
+
+# Clone VDI Disk
 VBoxManage clonevdi myDisk1.vdi cloneDisk.vdi
-```
-* Enable Nested VT-x/AMD-V for Intel VT-x supported CPU.
-```console
+
+# Enable Nested VT-x/AMD-V for Intel VT-x supported CPU.
 VBoxManage modifyvm "Your VM Name" --nested-hw-virt on
 ```
 
