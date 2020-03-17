@@ -162,3 +162,14 @@ sudo apt update && sudo apt install -y kali-grant-root
         ],
     ],
 ```
+
+### OpenVAS
+```shell
+# Issue Update/Download Feed.
+# - rsync: failed to connect to feed.openvas.org (89.146.224.58): Connection refused (111)
+# - rsync: failed to connect to feed.openvas.org (2a01:130:2000:127::d1): Cannot assign requested address (99)
+#
+# Fixing Update/Download Feed.
+apt update && apt install iputils-ping
+greenbone-nvt-sync --curl --verbose
+```
