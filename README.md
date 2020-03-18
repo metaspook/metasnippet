@@ -121,6 +121,10 @@ VBoxManage modifyvm "Your VM Name" --nested-hw-virt on
 
 ### Kali Linux
 ```shell
+# Post Installation.
+sudo apt clean
+sudo -- sh -c 'apt update && apt -y upgrade && apt -y full-upgrade && apt -y autoremove'
+
 # [Re]set my password for Root user.
 sudo passwd root
 
