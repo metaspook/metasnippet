@@ -133,6 +133,11 @@ sudo apt update && sudo apt install -y kali-grant-root
 ```
 
 ### Laravel
+* To [re]create config cache use the command below or alternatively delete the "bootstrap/cache/config.php" file.<br> Useful after any changes in '.env' file.
+```console
+php artisan config:cache
+```
+
 * Application Debug Blacklist [add below code to "/laravel/config/app.php" file.]
 ```php
 /*
