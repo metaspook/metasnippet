@@ -105,7 +105,13 @@ echo %path:;=&echo.%
 
 ### VirtualBox
 ```batch
-:: In Windows use this command first.
+:: Fix error "VERR_NEM_VM_CREATE_FAILED" causing WSL2
+bcdedit /set hypervisorlaunchtype off
+```
+
+```batch
+:: In Windows use this command first or go to directory where
+:: Virtualbox installed befor using 'VBoxManage' command.
 pushd "%PROGRAMFILES%\Oracle\VirtualBox"
 ```
 ```shell
