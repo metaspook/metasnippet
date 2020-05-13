@@ -123,6 +123,9 @@ VBoxManage clonevdi myDisk1.vdi cloneDisk.vdi
 
 # Enable Nested VT-x/AMD-V for Intel VT-x supported CPU.
 VBoxManage modifyvm "Your VM Name" --nested-hw-virt on
+
+# Enable Unrestricted Guest Execution for Intel VT-x supported CPU.
+VBoxManage modifyvm "Your VM Name" --vtxux on
 ```
 
 ### Kali Linux
