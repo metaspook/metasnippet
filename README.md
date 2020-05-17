@@ -105,7 +105,8 @@ echo %path:;=&echo.%
 
 ### VirtualBox
 ```batch
-:: WINDOWS: Fix error "VERR_NEM_VM_CREATE_FAILED" causing WSL2
+:: WINDOWS: Fix error "VERR_NEM_VM_CREATE_FAILED"
+:: causing by WSL2, Memory integrity etc.
 bcdedit /set hypervisorlaunchtype off
 ```
 
