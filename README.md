@@ -107,6 +107,7 @@ echo %path:;=&echo.%
 ```batch
 :: WINDOWS: Fix error "VERR_NEM_VM_CREATE_FAILED"
 :: causing by WSL2, Memory integrity etc.
+:: ! Restart PC to take effect after command.
 bcdedit /set hypervisorlaunchtype off
 ```
 
