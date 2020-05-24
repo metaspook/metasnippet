@@ -1,5 +1,5 @@
 # Metasnippet
-Code Commands Snippets of various Languages/Commands written or collected by Metaspook.
+Various Code and Command Snippets.
 
 ### PHP
 ```php
@@ -101,6 +101,43 @@ function run_cmd($cmd) {
 :: Prints list of semicolon separated paths.
 echo %path:;=&echo.%
 
+```
+
+### Windows Subsystem for Linux (WSL)
+
+```batch
+:: WSL 1
+:: Requirements: Windows 10
+
+:: Enable WSL 1
+:: ! Restart PC to take effect after command.
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+:: Set WSL 1 as default version next Linux will install on.
+wsl --set-default-version 1
+```
+
+```batch
+:: WSL 2
+:: Requirements: Windows 10 Version 2004+ Build 19041+
+
+:: Enable WSL 2
+:: ! Restart PC to take effect after command.
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+:: Set WSL 2 as default version next Linux will install on.
+wsl --set-default-version 2
+```
+
+```batch
+:: Lists all 'Linux Distro Names', 'Status' and 'WSL versions'.
+"wsl --list --verbose" OR "wsl -l -v"
+
+:: Change the WSL versions of any Linux Installation.
+:: <distribution name> = Desired distro's name.
+:: <versionNumber>     = Desired WSL version '1' or '2'.
+wsl --set-version <distribution name> <versionNumber>
 ```
 
 ### VirtualBox
