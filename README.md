@@ -1,5 +1,5 @@
 # Metasnippet
-Code Snippets of various Languages/Commands written or collected by Metaspook.
+Code Commands Snippets of various Languages/Commands written or collected by Metaspook.
 
 ### PHP
 ```php
