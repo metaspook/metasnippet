@@ -141,6 +141,26 @@ wsl --set-version <distribution name> <versionNumber>
 ```
 
 ### VirtualBox
+```shell
+## VirtualBox Guest Additions on a GUI-less Debian based distros.
+##
+## 1. Enter the following command.
+for X in build-essential dkms linux-headers-generic linux-headers-$(uname -r); do sudo apt install -y $X; done
+
+## 2. In virtual machine menu, click Devices -> "Insert Guest Additions CD Image".
+## If an error saying the guest system has no CD-ROM, stop the virtual machine, open virtual machine 
+## settings and from the "Storage" tab, add a new CD-ROM device to the machine by clicking 
+## on the plus sign (Adds optical device). Once done, reboot the virtual machine.
+## After that enter the following commands.
+sudo mkdir -p /mnt/cdrom
+sudo mount /dev/cdrom /mnt/cdrom
+cd /mnt/cdrom
+sudo ./VBoxLinuxAdditions.run --nox11
+
+## 3. Reboot for changes to take effect.
+"sudo shutdown -r now" OR "sudo reboot"
+```
+
 ```batch
 :: WINDOWS: Fix error "VERR_NEM_VM_CREATE_FAILED"
 :: causing by WSL2, Memory integrity etc.
