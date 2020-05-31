@@ -103,6 +103,17 @@ echo %path:;=&echo.%
 
 ```
 
+
+### Linux (Debian-based)
+```shell
+## Change language to English US.
+# First choose 'en_US.UTF-8' from supported locale list.
+sudo dpkg-reconfigure locales
+
+# Now change the current default locale.
+sudo update-locale LANG=en_US.UTF-8
+```
+
 ### Windows Subsystem for Linux (WSL)
 
 ```batch
