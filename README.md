@@ -172,10 +172,6 @@ sudo nano /etc/ssh/sshd_config
 
 ### VirtualBox
 ```shell
-## Enable SSH to Guest VM (Windows/Mac/Linux).
-VBoxManage modifyvm "Centos" --natpf1 "SSH,tcp,127.0.0.1,2522,10.0.2.15,22"
-
-```shell
 ## VirtualBox Guest Additions on a GUI-less Debian based distros.
 ##
 ## 1. Enter the following command.
