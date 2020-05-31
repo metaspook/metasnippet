@@ -151,6 +151,18 @@ wsl --set-default-version 2
 wsl --set-version <distribution name> <versionNumber>
 ```
 
+```pwsh
+## Windows Defender exclusion for WSL distros. (performance+)
+# Download the script from here:
+# https://gist.github.com/noelbundick/9c804a710eb76e1d6a234b14abf42a52
+# Enter the following conmmands respectively from an
+# administrative PowerShell prompt where the script exists.
+$POLVAR = (Get-ExecutionPolicy)
+Set-ExecutionPolicy RemoteSigned -force
+./excludeWSL.ps1
+Set-ExecutionPolicy $POLVAR -force
+```
+
 ### SSH Tweaks
 ```shell
 ##*Edit SSH server config file.
