@@ -151,7 +151,30 @@ wsl --set-default-version 2
 wsl --set-version <distribution name> <versionNumber>
 ```
 
+### SSH Tweaks
+```shell
+##*Edit SSH server config file.
+sudo nano /etc/ssh/sshd_config
+
+#*Enable password authentication, uncomment.
+#PasswordAuthentication yes
+
+#*Enable root login, uncomment
+#PermitRootLogin yes
+
+#*Enable ssh key login, uncomment
+#PubkeyAuthentication yes
+#AuthorizedKeysFile .ssh/authorized_keys
+
+# Restart the ssh service.
+"sudo systemctl restart ssh" OR "sudo service --full-restart sshd"
+```
+
 ### VirtualBox
+```shell
+## Enable SSH to Guest VM (Windows/Mac/Linux).
+VBoxManage modifyvm "Centos" --natpf1 "SSH,tcp,127.0.0.1,2522,10.0.2.15,22"
+
 ```shell
 ## VirtualBox Guest Additions on a GUI-less Debian based distros.
 ##
@@ -185,6 +208,14 @@ bcdedit /set hypervisorlaunchtype off
 pushd "%PROGRAMFILES%\Oracle\VirtualBox"
 ```
 ```shell
+## Enable SSH to Guest VM (Windows/Mac/Linux).
+## Guest VM >> Settings >> Network >> Advanced >> Port Forwarding button. (Alternative).
+VBoxManage modifyvm "Your VM Name" --natpf1 "SSH,tcp,127.0.0.1,2522,10.0.2.15,22"
+# Verify the rule.
+VBoxManage showvminfo "Your VM Name" | grep 'Rule'
+# Connect using the following from Host.
+ssh -p 2522 <login>@127.0.0.1
+
 # Change the UUID of Virtual Disk
 VBoxManage internalcommands sethduuid "/var/vdisks/myDisk1.vdi"
 
