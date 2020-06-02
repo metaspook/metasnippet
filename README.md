@@ -100,14 +100,18 @@ function run_cmd($cmd) {
 </details>
 
 ### Batch Script
+<details><summary>Click to collapse/fold.</summary><br/>
+	
 ```batch
 :: Prints list of semicolon separated paths.
 echo %path:;=&echo.%
 
 ```
-
+</details>
 
 ### Linux (Debian-based)
+<details><summary>Click to collapse/fold.</summary><br/>
+	
 ```shell
 ## Change language to English US.
 # First choose 'en_US.UTF-8' from supported locale list.
@@ -116,9 +120,11 @@ sudo dpkg-reconfigure locales
 # Now change the current default locale.
 sudo update-locale LANG=en_US.UTF-8
 ```
+</details>
 
 ### Windows Subsystem for Linux (WSL)
-
+<details><summary>Click to collapse/fold.</summary><br/>
+	
 ```batch
 :: WSL 1
 :: Requirements: Windows 10
@@ -165,8 +171,11 @@ Set-ExecutionPolicy RemoteSigned -force
 ./excludeWSL.ps1
 Set-ExecutionPolicy $POLVAR -force
 ```
+</details>
 
 ### SSH Tweaks
+<details><summary>Click to collapse/fold.</summary><br/>
+	
 ```shell
 ##*Edit SSH server config file.
 sudo nano /etc/ssh/sshd_config
@@ -184,8 +193,11 @@ sudo nano /etc/ssh/sshd_config
 # Restart the ssh service.
 "sudo systemctl restart ssh" OR "sudo service --full-restart sshd"
 ```
+</details>
 
 ### VirtualBox
+<details><summary>Click to collapse/fold.</summary><br/>
+	
 ```shell
 ## VirtualBox Guest Additions on a GUI-less Debian based distros.
 ##
@@ -239,8 +251,11 @@ VBoxManage modifyvm "Your VM Name" --nested-hw-virt on
 # Enable Unrestricted Guest Execution for Intel VT-x supported CPU.
 VBoxManage modifyvm "Your VM Name" --vtxux on
 ```
+</details>
 
 ### Kali Linux
+<details><summary>Click to collapse/fold.</summary><br/>
+	
 ```shell
 # Post Installation.
 sudo apt clean
@@ -252,8 +267,11 @@ sudo passwd root
 # Restore legacy Kali Root User Policy in v2020.1+.
 sudo apt update && sudo apt install -y kali-grant-root
 ```
+</details>
 
 ### Laravel
+<details><summary>Click to collapse/fold.</summary><br/>
+	
 * To [re]create config cache use the command below or alternatively delete the "bootstrap/cache/config.php" file.<br> Useful after any changes in '.env' file.
 ```console
 php artisan config:cache
@@ -292,8 +310,11 @@ php artisan config:cache
         ],
     ],
 ```
+</details>
 
 ### OpenVAS
+<details><summary>Click to collapse/fold.</summary><br/>
+	
 ```shell
 # Issue Update/Download Feed.
 # - rsync: failed to connect to feed.openvas.org (89.146.224.58): Connection refused (111)
@@ -303,3 +324,4 @@ php artisan config:cache
 apt update && apt install iputils-ping
 greenbone-nvt-sync --curl --verbose
 ```
+</details>
