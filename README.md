@@ -125,6 +125,9 @@ sudo apt remove --purge kali-menu
 
 # Install a package if not exist, Reinstall if exists.
 sudo apt install --reinstall <package-name>
+
+# Reboot/Restart.
+"sudo shutdown -r now" OR "sudo reboot"
 ```
 </details>
 
@@ -205,23 +208,47 @@ sudo nano /etc/ssh/sshd_config
 <details><summary>Click to collapse/fold.</summary><br/>
 	
 ```shell
-## VirtualBox Guest Additions on a GUI-less Debian based distros.
-##
-## 1. Enter the following command.
-for X in build-essential dkms linux-headers-generic linux-headers-$(uname -r); do sudo apt install -y $X; done
+### VirtualBox Guest Additions.
+#
+## Pre-Installation.
+# 1. Select VM >> Settings >> >> Storage >> If no CD-ROM device add a new.
+# 2. Start VM >> In VM's window menu 'Devices' >> 'Insert Guest Additions CD Image'
+# 3. Enter either of the following commands. (second one for legacy distros.)
+sudo -- sh -c 'apt update && apt -y upgrade && apt -y full-upgrade && apt -y autoremove'
+sudo -- sh -c 'apt-get update && apt-get upgrade -y && apt-get full-upgrade -y && apt-get autoremove -y'
 
-## 2. In virtual machine menu, click Devices -> "Insert Guest Additions CD Image".
-## If an error saying the guest system has no CD-ROM, stop the virtual machine, open virtual machine 
-## settings and from the "Storage" tab, add a new CD-ROM device to the machine by clicking 
-## on the plus sign (Adds optical device). Once done, reboot the virtual machine.
-## After that enter the following commands.
+## Installation on GUI/Normal Debian-like.
+# Go to CD-ROM folder Enter the following command then reboot to take effect.
+sudo ./VBoxLinuxAdditions.run
+
+## Installation on GUI/Normal Debian-like (Alternative).
+# Enter first of the following commands, if VirtualBox-Guest-* package's version
+# matches with VirtualBox's then enter the second. Once done, reboot to take effect.
+apt search virtualbox-guest
+for X in dkms utils x11; do sudo apt install -y virtualbox-guest-$X; done
+
+## Installation on GUI-less/Terminal on Debian-like.
+# Enter the following commands. Once done, reboot to take effect.
+for X in build-essential dkms linux-headers-generic linux-headers-$(uname -r); do sudo apt install -y $X; done
 sudo mkdir -p /mnt/cdrom
 sudo mount /dev/cdrom /mnt/cdrom
 cd /mnt/cdrom
 sudo ./VBoxLinuxAdditions.run --nox11
 
-## 3. Reboot for changes to take effect.
-"sudo shutdown -r now" OR "sudo reboot"
+## Installation on GUI-less/Terminal on Debian-like (Alternative).
+# Enter first of the following commands, if VirtualBox-Guest-* package's version
+# matches with VirtualBox's then enter the second. Once done, reboot to take effect.
+apt search virtualbox-guest
+for X in dkms utils; do sudo apt install -y virtualbox-guest-$X; done
+
+## Get the Version on Debian-like.
+/usr/sbin/VBoxService --version
+
+## Get List of available VirtualBox-Guest packages.
+apt search virtualbox-guest
+
+## Get List of installed VirtualBox-Guest packages.
+dpkg -l | grep virtualbox-guest
 ```
 
 ```batch
