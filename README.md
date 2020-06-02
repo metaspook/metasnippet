@@ -119,6 +119,12 @@ sudo dpkg-reconfigure locales
 
 # Now change the current default locale.
 sudo update-locale LANG=en_US.UTF-8
+
+# Remove and purge a package.
+sudo apt remove --purge kali-menu
+
+# Install a package if not exist, Reinstall if exists.
+sudo apt install --reinstall <package-name>
 ```
 </details>
 
@@ -266,6 +272,15 @@ sudo passwd root
 
 # Restore legacy Kali Root User Policy in v2020.1+.
 sudo apt update && sudo apt install -y kali-grant-root
+
+# Install Kali Linux main menu.
+sudo apt install kali-menu -y
+
+# Fix broken Menu in Kali Linux.
+sudo -- sh -c 'apt remove --purge kali-menu -y && apt clean'
+sudo rm -rf .local/share/applications .config/menus
+sudo reboot
+sudo apt install kali-menu -y
 ```
 </details>
 
