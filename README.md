@@ -1,6 +1,124 @@
 # Metasnippet
 Various Code and Command Snippets.
 
+### Batch Script
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```batch
+:: Prints list of semicolon separated paths.
+echo %path:;=&echo.%
+
+```
+</details>
+
+### Kali Linux
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```shell
+# Post Installation.
+sudo apt clean
+sudo -- sh -c 'apt update && apt -y upgrade && apt -y full-upgrade && apt -y autoremove'
+
+# [Re]set my password for Root user.
+sudo passwd root
+
+# Restore legacy Kali Root User Policy in v2020.1+.
+sudo apt update && sudo apt install -y kali-grant-root
+
+# Install Kali Linux main menu.
+sudo apt install kali-menu -y
+
+# Main menu customization.
+# Get a new item 'Main Menu' in Usual applications >> Accessories
+sudo apt install alacarte -y
+
+# Fix broken Menu in Kali Linux.
+sudo -- sh -c 'apt remove --purge kali-menu -y && apt clean'
+sudo rm -rf .local/share/applications .config/menus
+sudo reboot
+sudo apt install kali-menu -y
+```
+</details>
+
+### Laravel
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+* To [re]create config cache use the command below or alternatively delete the "bootstrap/cache/config.php" file.<br> Useful after any changes in '.env' file.
+```console
+php artisan config:cache
+```
+
+* Application Debug Blacklist [add below code to "/laravel/config/app.php" file.]
+```php
+/*
+    |--------------------------------------------------------------------------
+    | Application Debug Blacklist
+    |--------------------------------------------------------------------------
+    |
+    | When an exception is uncaught and the APP_DEBUG environment variable is 
+    | true, the debug page will show all environment variables and their 
+    | contents. In some cases you may want to obscure certain variables.
+    |
+    */
+
+    'debug_blacklist' => [
+        '_ENV' => [
+            'APP_KEY',
+            'DB_PASSWORD',
+            'REDIS_PASSWORD',
+            'MAIL_PASSWORD',
+        ],
+
+        '_SERVER' => [
+            'APP_KEY',
+            'DB_PASSWORD',
+            'REDIS_PASSWORD',
+            'MAIL_PASSWORD',
+        ],
+
+        '_POST' => [
+            'password',
+        ],
+    ],
+```
+</details>
+
+### Linux (Debian-based)
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```shell
+## Change language to English US.
+# First choose 'en_US.UTF-8' from supported locale list.
+sudo dpkg-reconfigure locales
+
+# Now change the current default locale.
+sudo update-locale LANG=en_US.UTF-8
+
+# Remove and purge a package.
+sudo apt remove --purge kali-menu
+
+# Install a package if not exist, Reinstall if exists.
+sudo apt install --reinstall <package-name>
+
+# Reboot/Restart.
+"sudo shutdown -r now" OR "sudo reboot"
+```
+</details>
+
+### OpenVAS
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```shell
+# Issue Update/Download Feed.
+# - rsync: failed to connect to feed.openvas.org (89.146.224.58): Connection refused (111)
+# - rsync: failed to connect to feed.openvas.org (2a01:130:2000:127::d1): Cannot assign requested address (99)
+#
+# Fixing Update/Download Feed.
+apt update && apt install iputils-ping
+greenbone-nvt-sync --curl --verbose
+```
+</details>
+
 ### PHP
 <details><summary>Click to collapse/fold.</summary><br/>
 	
@@ -96,89 +214,6 @@ function run_cmd($cmd) {
     fclose($pipes[2]);$code = proc_close($process);return $output;
 }
 
-```
-</details>
-
-### Batch Script
-<details><summary>Click to collapse/fold.</summary><br/>
-	
-```batch
-:: Prints list of semicolon separated paths.
-echo %path:;=&echo.%
-
-```
-</details>
-
-### Linux (Debian-based)
-<details><summary>Click to collapse/fold.</summary><br/>
-	
-```shell
-## Change language to English US.
-# First choose 'en_US.UTF-8' from supported locale list.
-sudo dpkg-reconfigure locales
-
-# Now change the current default locale.
-sudo update-locale LANG=en_US.UTF-8
-
-# Remove and purge a package.
-sudo apt remove --purge kali-menu
-
-# Install a package if not exist, Reinstall if exists.
-sudo apt install --reinstall <package-name>
-
-# Reboot/Restart.
-"sudo shutdown -r now" OR "sudo reboot"
-```
-</details>
-
-### Windows Subsystem for Linux (WSL)
-<details><summary>Click to collapse/fold.</summary><br/>
-	
-```batch
-:: WSL 1
-:: Requirements: Windows 10
-
-:: Enable WSL 1
-:: ! Restart PC to take effect after command.
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-
-:: Set WSL 1 as default version next Linux will install on.
-wsl --set-default-version 1
-```
-
-```batch
-:: WSL 2
-:: Requirements: Windows 10 Version 2004+ Build 19041+
-
-:: Enable WSL 2
-:: ! Restart PC to take effect after command.
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-
-:: Set WSL 2 as default version next Linux will install on.
-wsl --set-default-version 2
-```
-
-```batch
-:: Lists all 'Linux Distro Names', 'Status' and 'WSL versions'.
-"wsl --list --verbose" OR "wsl -l -v"
-
-:: Change the WSL versions of any Linux Installation.
-:: <distribution name> = Desired distro's name.
-:: <versionNumber>     = Desired WSL version '1' or '2'.
-wsl --set-version <distribution name> <versionNumber>
-```
-
-```pwsh
-## Windows Defender exclusion for WSL distros. (performance+)
-# Download the script from here:
-# https://gist.github.com/noelbundick/9c804a710eb76e1d6a234b14abf42a52
-# Enter the following conmmands respectively from an
-# administrative PowerShell prompt where the script exists.
-$POLVAR = (Get-ExecutionPolicy)
-Set-ExecutionPolicy RemoteSigned -force
-./excludeWSL.ps1
-Set-ExecutionPolicy $POLVAR -force
 ```
 </details>
 
@@ -286,88 +321,53 @@ VBoxManage modifyvm "Your VM Name" --vtxux on
 ```
 </details>
 
-### Kali Linux
+### Windows Subsystem for Linux (WSL)
 <details><summary>Click to collapse/fold.</summary><br/>
 	
-```shell
-# Post Installation.
-sudo apt clean
-sudo -- sh -c 'apt update && apt -y upgrade && apt -y full-upgrade && apt -y autoremove'
+```batch
+:: WSL 1
+:: Requirements: Windows 10
 
-# [Re]set my password for Root user.
-sudo passwd root
+:: Enable WSL 1
+:: ! Restart PC to take effect after command.
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 
-# Restore legacy Kali Root User Policy in v2020.1+.
-sudo apt update && sudo apt install -y kali-grant-root
-
-# Install Kali Linux main menu.
-sudo apt install kali-menu -y
-
-# Main menu customization.
-# Get a new item 'Main Menu' in Usual applications >> Accessories
-sudo apt install alacarte -y
-
-# Fix broken Menu in Kali Linux.
-sudo -- sh -c 'apt remove --purge kali-menu -y && apt clean'
-sudo rm -rf .local/share/applications .config/menus
-sudo reboot
-sudo apt install kali-menu -y
-```
-</details>
-
-### Laravel
-<details><summary>Click to collapse/fold.</summary><br/>
-	
-* To [re]create config cache use the command below or alternatively delete the "bootstrap/cache/config.php" file.<br> Useful after any changes in '.env' file.
-```console
-php artisan config:cache
+:: Set WSL 1 as default version next Linux will install on.
+wsl --set-default-version 1
 ```
 
-* Application Debug Blacklist [add below code to "/laravel/config/app.php" file.]
-```php
-/*
-    |--------------------------------------------------------------------------
-    | Application Debug Blacklist
-    |--------------------------------------------------------------------------
-    |
-    | When an exception is uncaught and the APP_DEBUG environment variable is 
-    | true, the debug page will show all environment variables and their 
-    | contents. In some cases you may want to obscure certain variables.
-    |
-    */
+```batch
+:: WSL 2
+:: Requirements: Windows 10 Version 2004+ Build 19041+
 
-    'debug_blacklist' => [
-        '_ENV' => [
-            'APP_KEY',
-            'DB_PASSWORD',
-            'REDIS_PASSWORD',
-            'MAIL_PASSWORD',
-        ],
+:: Enable WSL 2
+:: ! Restart PC to take effect after command.
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 
-        '_SERVER' => [
-            'APP_KEY',
-            'DB_PASSWORD',
-            'REDIS_PASSWORD',
-            'MAIL_PASSWORD',
-        ],
-
-        '_POST' => [
-            'password',
-        ],
-    ],
+:: Set WSL 2 as default version next Linux will install on.
+wsl --set-default-version 2
 ```
-</details>
 
-### OpenVAS
-<details><summary>Click to collapse/fold.</summary><br/>
-	
-```shell
-# Issue Update/Download Feed.
-# - rsync: failed to connect to feed.openvas.org (89.146.224.58): Connection refused (111)
-# - rsync: failed to connect to feed.openvas.org (2a01:130:2000:127::d1): Cannot assign requested address (99)
-#
-# Fixing Update/Download Feed.
-apt update && apt install iputils-ping
-greenbone-nvt-sync --curl --verbose
+```batch
+:: Lists all 'Linux Distro Names', 'Status' and 'WSL versions'.
+"wsl --list --verbose" OR "wsl -l -v"
+
+:: Change the WSL versions of any Linux Installation.
+:: <distribution name> = Desired distro's name.
+:: <versionNumber>     = Desired WSL version '1' or '2'.
+wsl --set-version <distribution name> <versionNumber>
+```
+
+```pwsh
+## Windows Defender exclusion for WSL distros. (performance+)
+# Download the script from here:
+# https://gist.github.com/noelbundick/9c804a710eb76e1d6a234b14abf42a52
+# Enter the following conmmands respectively from an
+# administrative PowerShell prompt where the script exists.
+$POLVAR = (Get-ExecutionPolicy)
+Set-ExecutionPolicy RemoteSigned -force
+./excludeWSL.ps1
+Set-ExecutionPolicy $POLVAR -force
 ```
 </details>
