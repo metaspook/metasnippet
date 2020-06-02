@@ -276,6 +276,10 @@ sudo apt update && sudo apt install -y kali-grant-root
 # Install Kali Linux main menu.
 sudo apt install kali-menu -y
 
+# Main menu customization.
+# Get a new item 'Main Menu' in Usual applications >> Accessories
+sudo apt install alacarte -y
+
 # Fix broken Menu in Kali Linux.
 sudo -- sh -c 'apt remove --purge kali-menu -y && apt clean'
 sudo rm -rf .local/share/applications .config/menus
