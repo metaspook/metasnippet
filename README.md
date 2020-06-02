@@ -2,6 +2,8 @@
 Various Code and Command Snippets.
 
 ### PHP
+<details><summary>Click to collapse/fold.</summary><br/>
+	
 ```php
 // Escape string value for use in HTML.
 // Usages: html_escape("Replace string/variable here")
@@ -95,6 +97,7 @@ function run_cmd($cmd) {
 }
 
 ```
+</details>
 
 ### Batch Script
 ```batch
