@@ -103,6 +103,14 @@ sudo apt install --reinstall <package-name>
 # Reboot/Restart.
 "sudo shutdown -r now" OR "sudo reboot"
 ```
+```shell
+## Install "screenFetch" (Bash Screenshot Information Tool).
+sudo apt install screenfetch
+# Install "screenFetch" (Alternative) 
+# Useful in error "awk: fatal: cannot open file `proc/fb' for reading".
+sudo -- sh -c 'wget -O /usr/bin/screenfetch https://git.io/vaHfR && chmod +x /usr/bin/screenfetch'
+
+```
 </details>
 
 ### OpenVAS
