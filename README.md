@@ -333,7 +333,7 @@ VBoxManage modifyvm "Your VM Name" --vtxux on
 <details><summary>Click to collapse/fold.</summary><br/>
 	
 ```batch
-:: Get a CMD prompt windows during Windows installation.
+:: Get a CMD prompt during Windows installation.
 Press Shift + F10
 ```
 </details>
