@@ -329,6 +329,15 @@ VBoxManage modifyvm "Your VM Name" --vtxux on
 ```
 </details>
 
+### Windows
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```batch
+:: Get a CMD prompt windows during Windows installation.
+Press Shift + F10
+```
+</details>
+
 ### Windows Subsystem for Linux (WSL)
 <details><summary>Click to collapse/fold.</summary><br/>
 	
