@@ -1,6 +1,17 @@
 # Metasnippet
 Various Code and Command Snippets.
 
+### Abbreviations
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```code
+E.g. --> "exempli gratia (Latin)" --> "for example" or "for the sake of example"
+-------> Usages: I'll drive a new car, e.g., Lamborghini or Ferrari.
+I.e. --> "id est (Latin)" --> "in other words" or "that is (to say)"
+-------> Usages: I'll drive that new car, i.e., Lamborghini.
+```
+</details>
+
 ### Batch Script
 <details><summary>Click to collapse/fold.</summary><br/>
 	
@@ -43,12 +54,37 @@ sudo apt install kali-menu -y
 ### Laravel
 <details><summary>Click to collapse/fold.</summary><br/>
 	
-* To [re]create config cache use the command below or alternatively delete the "bootstrap/cache/config.php" file.<br> Useful after any changes in '.env' file.
-```console
+* <b>Artisan Commands.</b>
+* <i>Usages</i>: Execute the commands below from Laravel application directory.
+```shell
+# [Re]create config cache. Useful after any changes in '.env' file. If unable to 
+# execute the command delete the "bootstrap/cache/config.php" file as fallback.
 php artisan config:cache
+
+# Clear Application Cache.
+php artisan cache:clear
+
+# Clear Route Cache.
+php artisan route:clear
+
+# Clear Configuration Cache.
+php artisan config:clear
+
+# Clear Compiled Views Cache.
+php artisan view:clear
 ```
 
-* Application Debug Blacklist [add below code to "/laravel/config/app.php" file.]
+
+2
+3
+```php
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
+```
+* <b>Application Debug Blacklist.</b> Hide the specific informations from debug page.
+* <i>Usages</i>: Add the snippet below to "/laravel/config/app.php" file.
 ```php
 /*
     |--------------------------------------------------------------------------
@@ -157,8 +193,9 @@ define('IS_WINDOWS', is_windows()); // Optional
 // Usages: array_filter($arr, 'string_sort')
 function string_sort($var){ return (strlen($var) && is_string($var)); }
 
-// Convert directory separator into running OS's.
-// Usages: con_dirsep("Replace path here")
+// Convert given path's separator '/' or '\' into the operating system's directory separator
+// the server currently running on e.g., "\path\in\windows" >> "/path/in/linux".
+// Usages: con_dirsep("/Replace/path/here")
 function con_dirsep($str){ return str_replace(['\\', '/'], DIRECTORY_SEPARATOR, $str); }
 
 // Convert given string's URLs to links.
