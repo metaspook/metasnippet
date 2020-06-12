@@ -54,7 +54,7 @@ sudo apt install kali-menu -y
 ### Laravel
 <details><summary>Click to collapse/fold.</summary><br/>
 	
-* <b>Artisan Commands.</b>
+* <b>Artisan Commands.</b> Useful Artisan commands.
 * <i>Usages</i>: Execute the commands below from Laravel application directory.
 ```shell
 # [Re]create config cache. Useful after any changes in '.env' file. If unable to 
@@ -74,17 +74,39 @@ php artisan config:clear
 php artisan view:clear
 ```
 
-
-2
-3
+* <b>Clear Laravel Caches.</b> Clear Application/Route/Configuration/Views caches.
+* <i>Usages</i>: Add the snippets below to "routes/web.php" file and call the URL from browser.
 ```php
+// Clear Application Cache.
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
-    return "Cache is cleared";
+    return "Application Cache is cleared!";
 });
 ```
+```php
+// Clear Route Cache.
+Route::get('/route-cache', function() {
+    Artisan::call('route:clear');
+    return "Route Cache is cleared!";
+});
+```
+```php
+// Clear Configuration Cache.
+Route::get('/config-cache', function() {
+    Artisan::call('config:clear');
+    return "Configuration Cache is cleared!";
+});
+```
+```php
+// Clear Compiled Views Cache.
+Route::get('/view-cache', function() {
+    Artisan::call('view:clear');
+    return "Compiled Views Cache is cleared!";
+});
+```
+
 * <b>Application Debug Blacklist.</b> Hide the specific informations from debug page.
-* <i>Usages</i>: Add the snippet below to "/laravel/config/app.php" file.
+* <i>Usages</i>: Add the snippet below to "config/app.php" file.
 ```php
 /*
     |--------------------------------------------------------------------------
