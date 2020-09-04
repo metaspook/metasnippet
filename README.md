@@ -9,6 +9,19 @@ E.g. --> "exempli gratia (Latin)" --> "for example" or "for the sake of example"
 -------> Usages: I'll drive a new car, e.g., Lamborghini or Ferrari.
 I.e. --> "id est (Latin)" --> "in other words" or "that is (to say)"
 -------> Usages: I'll drive that new car, i.e., Lamborghini.
+
+GUI ---> Graphical User Interface.
+Output: Text, Window, Menu, Dialogue, Image, Audio, Video, Icon.
+Input : Mouse, Keyboard, Voice, Gesture and other HW input.
+--------------------------------
+TUI ---> Text/Terminal User Interface.
+Output: Text, Window, Menu, Dialogue.
+Input : Mouse, Keyboard.
+--------------------------------
+CLI ---> Command Line Interface i.e. CUI (Console User Interface).
+Output: Text.
+Input : Keyboard.
+
 ```
 </details>
 
@@ -167,6 +180,10 @@ sudo apt install screenfetch
 # Install "screenFetch" (Alternative) 
 # Useful in error "awk: fatal: cannot open file `proc/fb' for reading".
 sudo -- sh -c 'wget -O /usr/bin/screenfetch https://git.io/vaHfR && chmod +x /usr/bin/screenfetch'
+
+## Install "Midnight Commander".
+# A TUI based Visual File Manager.
+sudo apt-get install mc
 
 ```
 </details>
