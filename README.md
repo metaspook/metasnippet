@@ -183,7 +183,7 @@ sudo -- sh -c 'wget -O /usr/bin/screenfetch https://git.io/vaHfR && chmod +x /us
 
 ## Install "Midnight Commander".
 # A TUI based Visual File Manager.
-sudo apt-get install mc
+sudo apt install mc
 
 ```
 </details>
