@@ -153,7 +153,7 @@ sudo dpkg-reconfigure locales
 sudo update-locale LANG=en_US.UTF-8
 
 # Remove and purge a package.
-sudo apt remove --purge kali-menu
+sudo apt remove --purge <package-name>
 
 # Install a package if not exist, Reinstall if exists.
 sudo apt install --reinstall <package-name>
