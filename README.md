@@ -335,8 +335,33 @@ sudo nano /etc/ssh/sshd_config
 </details>
 
 ### VirtualBox
-<details><summary>Click to collapse/fold.</summary><br/>
-	
+<table ><tbody ><tr><td><details ><summary><b>Click to collapse/fold 👈</b>
+</summary>
+<h6>Linux/Mac/Windows</h6>
+
+```shell
+## Enable SSH to Guest VM (Windows/Mac/Linux).
+## Guest VM >> Settings >> Network >> Advanced >> Port Forwarding button. (Alternative).
+VBoxManage modifyvm "Your VM Name" --natpf1 "SSH,tcp,127.0.0.1,2522,10.0.2.15,22"
+# Verify the rule.
+VBoxManage showvminfo "Your VM Name" | grep 'Rule'
+# Connect using the following from Host.
+ssh -p 2522 <login>@127.0.0.1
+
+# Change the UUID of Virtual Disk
+VBoxManage internalcommands sethduuid "/var/vdisks/myDisk1.vdi"
+
+# Clone VDI Disk
+VBoxManage clonevdi myDisk1.vdi cloneDisk.vdi
+
+# Enable Nested VT-x/AMD-V for Intel VT-x supported CPU.
+VBoxManage modifyvm "Your VM Name" --nested-hw-virt on
+
+# Enable Unrestricted Guest Execution for Intel VT-x supported CPU.
+VBoxManage modifyvm "Your VM Name" --vtxux on
+```
+<h6>Linux</h6>
+
 ```shell
 ### VirtualBox Guest Additions.
 #
@@ -380,41 +405,22 @@ apt search virtualbox-guest
 ## Get List of installed VirtualBox-Guest packages.
 dpkg -l | grep virtualbox-guest
 ```
+<h6>Windows</h6>
 
 ```batch
-:: WINDOWS: Fix error "VERR_NEM_VM_CREATE_FAILED"
+:: Fix error "VERR_NEM_VM_CREATE_FAILED"
 :: causing by WSL2, Memory integrity etc.
 :: ! Restart PC to take effect after command.
 bcdedit /set hypervisorlaunchtype off
 ```
 
 ```batch
-:: WINDOWS: Use this command first or go to directory where
+:: Use this command first or go to directory where
 :: Virtualbox installed befor using 'VBoxManage' command.
 pushd "%PROGRAMFILES%\Oracle\VirtualBox"
 ```
-```shell
-## Enable SSH to Guest VM (Windows/Mac/Linux).
-## Guest VM >> Settings >> Network >> Advanced >> Port Forwarding button. (Alternative).
-VBoxManage modifyvm "Your VM Name" --natpf1 "SSH,tcp,127.0.0.1,2522,10.0.2.15,22"
-# Verify the rule.
-VBoxManage showvminfo "Your VM Name" | grep 'Rule'
-# Connect using the following from Host.
-ssh -p 2522 <login>@127.0.0.1
-
-# Change the UUID of Virtual Disk
-VBoxManage internalcommands sethduuid "/var/vdisks/myDisk1.vdi"
-
-# Clone VDI Disk
-VBoxManage clonevdi myDisk1.vdi cloneDisk.vdi
-
-# Enable Nested VT-x/AMD-V for Intel VT-x supported CPU.
-VBoxManage modifyvm "Your VM Name" --nested-hw-virt on
-
-# Enable Unrestricted Guest Execution for Intel VT-x supported CPU.
-VBoxManage modifyvm "Your VM Name" --vtxux on
-```
-</details>
+</details></td></tr></tbody>
+</table>
 
 ### Windows
 <details><summary>Click to collapse/fold.</summary><br/>
