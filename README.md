@@ -163,6 +163,15 @@ Route::get('/view-cache', function() {
   ## Install "Midnight Commander".
   # A TUI based Visual File Manager.
   sudo apt install mc
+  
+  ## Install "ZSH shell".
+  sudo apt install -y zsh zsh-syntax-highlighting zsh-autosuggestions
+  # Default ZSH configuration.
+  cp /etc/skel/.zshrc ~/
+  # Instant switch to ZSH.
+  zsh
+  # Set ZSH as default shell (a reboot may require to replace bash properly).
+  chsh -s /bin/zsh
   ```
 + <details>
     <summary>Kali Linux</summary><br/>
