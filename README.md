@@ -128,74 +128,70 @@ Route::get('/view-cache', function() {
 ### Linux OS
 <details><summary>Click to collapse/fold.</summary><br/>
 	
-### Generic Distro
-<details><summary>Click to collapse/fold.</summary><br/>
++ <details>
+    <summary>Generic Distro</summary><br/>
 	
-* <b>GitHub Desktop - The Linux Fork</b>
-* <i>Installation</i>: [https://github.com/shiftkey/desktop](https://github.com/shiftkey/desktop)
+    * <b>GitHub Desktop - The Linux Fork</b>
+    * <i>Installation</i>: [https://github.com/shiftkey/desktop](https://github.com/shiftkey/desktop)
++ <details>
+    <summary>Debian-based</summary><br/>
+	
+  ```shell
+  ## Change language to English US.
+  # First choose 'en_US.UTF-8' from supported locale list.
+  sudo dpkg-reconfigure locales
+
+  # Now change the current default locale.
+  sudo update-locale LANG=en_US.UTF-8
+
+  # Remove and purge a package.
+  sudo apt remove --purge <package-name>
+
+  # Install a package if not exist, Reinstall if exists.
+  sudo apt install --reinstall <package-name>
+
+  # Reboot/Restart.
+  "sudo shutdown -r now" OR "sudo reboot"
+  ```
+  ```shell
+  ## Install "screenFetch" (Bash Screenshot Information Tool).
+  sudo apt install screenfetch
+  # Install "screenFetch" (Alternative) 
+  # Useful in error "awk: fatal: cannot open file `proc/fb' for reading".
+  sudo -- sh -c 'wget -O /usr/bin/screenfetch https://git.io/vaHfR && chmod +x /usr/bin/screenfetch'
+
+  ## Install "Midnight Commander".
+  # A TUI based Visual File Manager.
+  sudo apt install mc
+  ```
++ <details>
+    <summary>Kali Linux</summary><br/>
+  
+  ```shell
+  # Post Installation.
+  sudo apt clean
+  sudo -- sh -c 'apt update && apt -y upgrade && apt -y full-upgrade && apt -y autoremove'
+
+  # [Re]set my password for Root user.
+  sudo passwd root
+
+  # Restore legacy Kali Root User Policy in v2020.1+.
+  sudo apt update && sudo apt install -y kali-grant-root
+
+  # Install Kali Linux main menu.
+  sudo apt install kali-menu -y
+
+  # Main menu customization.
+  # Get a new item 'Main Menu' in Usual applications >> Accessories
+  sudo apt install alacarte -y
+
+  # Fix broken Menu in Kali Linux.
+  sudo -- sh -c 'apt remove --purge kali-menu -y && apt clean'
+  sudo rm -rf .local/share/applications .config/menus
+  sudo reboot
+  sudo apt install kali-menu -y
+  ```
 </details>
-
-### Debian-based
-<details><summary>Click to collapse/fold.</summary><br/>
-	
-```shell
-## Change language to English US.
-# First choose 'en_US.UTF-8' from supported locale list.
-sudo dpkg-reconfigure locales
-
-# Now change the current default locale.
-sudo update-locale LANG=en_US.UTF-8
-
-# Remove and purge a package.
-sudo apt remove --purge <package-name>
-
-# Install a package if not exist, Reinstall if exists.
-sudo apt install --reinstall <package-name>
-
-# Reboot/Restart.
-"sudo shutdown -r now" OR "sudo reboot"
-```
-```shell
-## Install "screenFetch" (Bash Screenshot Information Tool).
-sudo apt install screenfetch
-# Install "screenFetch" (Alternative) 
-# Useful in error "awk: fatal: cannot open file `proc/fb' for reading".
-sudo -- sh -c 'wget -O /usr/bin/screenfetch https://git.io/vaHfR && chmod +x /usr/bin/screenfetch'
-
-## Install "Midnight Commander".
-# A TUI based Visual File Manager.
-sudo apt install mc
-
-```
-</details>
-
-### Kali Linux
-<details><summary>Click to collapse/fold.</summary><br/>
-	
-```shell
-# Post Installation.
-sudo apt clean
-sudo -- sh -c 'apt update && apt -y upgrade && apt -y full-upgrade && apt -y autoremove'
-
-# [Re]set my password for Root user.
-sudo passwd root
-
-# Restore legacy Kali Root User Policy in v2020.1+.
-sudo apt update && sudo apt install -y kali-grant-root
-
-# Install Kali Linux main menu.
-sudo apt install kali-menu -y
-
-# Main menu customization.
-# Get a new item 'Main Menu' in Usual applications >> Accessories
-sudo apt install alacarte -y
-
-# Fix broken Menu in Kali Linux.
-sudo -- sh -c 'apt remove --purge kali-menu -y && apt clean'
-sudo rm -rf .local/share/applications .config/menus
-sudo reboot
-sudo apt install kali-menu -y
-```
 </details>
 </details>
 
