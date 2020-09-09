@@ -35,35 +35,6 @@ echo %path:;=&echo.%
 ```
 </details>
 
-### Kali Linux
-<details><summary>Click to collapse/fold.</summary><br/>
-	
-```shell
-# Post Installation.
-sudo apt clean
-sudo -- sh -c 'apt update && apt -y upgrade && apt -y full-upgrade && apt -y autoremove'
-
-# [Re]set my password for Root user.
-sudo passwd root
-
-# Restore legacy Kali Root User Policy in v2020.1+.
-sudo apt update && sudo apt install -y kali-grant-root
-
-# Install Kali Linux main menu.
-sudo apt install kali-menu -y
-
-# Main menu customization.
-# Get a new item 'Main Menu' in Usual applications >> Accessories
-sudo apt install alacarte -y
-
-# Fix broken Menu in Kali Linux.
-sudo -- sh -c 'apt remove --purge kali-menu -y && apt clean'
-sudo rm -rf .local/share/applications .config/menus
-sudo reboot
-sudo apt install kali-menu -y
-```
-</details>
-
 ### Laravel
 <details><summary>Click to collapse/fold.</summary><br/>
 	
@@ -154,7 +125,17 @@ Route::get('/view-cache', function() {
 ```
 </details>
 
-### Linux (Debian-based)
+### Linux OS
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+### Generic Distro
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+* <b>GitHub Desktop - The Linux Fork</b>
+* <i>Installation</i>: [https://github.com/shiftkey/desktop](https://github.com/shiftkey/desktop)
+</details>
+
+### Debian-based
 <details><summary>Click to collapse/fold.</summary><br/>
 	
 ```shell
@@ -186,6 +167,36 @@ sudo -- sh -c 'wget -O /usr/bin/screenfetch https://git.io/vaHfR && chmod +x /us
 sudo apt install mc
 
 ```
+</details>
+
+### Kali Linux
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```shell
+# Post Installation.
+sudo apt clean
+sudo -- sh -c 'apt update && apt -y upgrade && apt -y full-upgrade && apt -y autoremove'
+
+# [Re]set my password for Root user.
+sudo passwd root
+
+# Restore legacy Kali Root User Policy in v2020.1+.
+sudo apt update && sudo apt install -y kali-grant-root
+
+# Install Kali Linux main menu.
+sudo apt install kali-menu -y
+
+# Main menu customization.
+# Get a new item 'Main Menu' in Usual applications >> Accessories
+sudo apt install alacarte -y
+
+# Fix broken Menu in Kali Linux.
+sudo -- sh -c 'apt remove --purge kali-menu -y && apt clean'
+sudo rm -rf .local/share/applications .config/menus
+sudo reboot
+sudo apt install kali-menu -y
+```
+</details>
 </details>
 
 ### OpenVAS
@@ -414,7 +425,7 @@ Press Shift + F10
 ```
 </details>
 
-### Windows Subsystem for Linux (WSL)
+### WSL (Windows Subsystem for Linux)
 <details><summary>Click to collapse/fold.</summary><br/>
 	
 ```batch
