@@ -434,6 +434,12 @@ pushd "%PROGRAMFILES%\Oracle\VirtualBox"
 :: Get a CMD prompt during Windows installation.
 Press Shift + F10
 ```
+
+```pwsh
+# Creates a virtual disk (VHD/VHDX) snapshot.
+Checkpoint-IscsiVirtualDisk -OriginalPath "D:\VHDs\DB.vhdx"
+Checkpoint-IscsiVirtualDisk -OriginalPath "D:\VHDs\DB.vhdx" -Description "Before database merge" -ComputerName "fssvr.contoso.com"
+```
 </details>
 
 ### WSL (Windows Subsystem for Linux)
