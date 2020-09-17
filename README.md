@@ -35,6 +35,19 @@ echo %path:;=&echo.%
 ```
 </details>
 
+### Drivers/Runtimes/SDK
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+
+```console
+# Vulkan (check runtime informations).
+# In Windows latest NVIDIA driver excluded "Vulkan RT Library" from the "Programs and Features" and made built-in.
+# Anyone can verify which Vulkan runtime is installed by entering following command.
+vulkaninfo
+
+```
+</details>
+
 ### Laravel
 <details><summary>Click to collapse/fold.</summary><br/>
 	
