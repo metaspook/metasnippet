@@ -353,6 +353,7 @@ sudo nano /etc/ssh/sshd_config
 </details>
 
 ### VirtualBox
+![Alt text](https://forums.virtualbox.org/styles/prosilver/imageset/vbox_footer_logo.png?raw=true)
 <table ><tbody ><tr><td><details ><summary><b>Click to collapse/fold 👈</b>
 </summary>
 <h6>Linux/Mac/Windows</h6>
