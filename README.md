@@ -31,9 +31,11 @@ Input : Keyboard.
 ```bash
 # Execute a Remote script.
 ~$ curl -sL https://raw.githubusercontent.com/metaspook/numid/main/numid.sh | bash -s - -A
+OR
 ~$ wget -qO- https://raw.githubusercontent.com/metaspook/numid/main/numid.sh | bash -s - -A
 
 ```
+</details>
 
 ### Batch Script
 <details><summary>Click to collapse/fold.</summary><br/>
