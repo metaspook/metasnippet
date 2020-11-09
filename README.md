@@ -30,9 +30,14 @@ Input : Keyboard.
 	
 ```console
 # Execute a Remote script.
-~$ curl -sL https://raw.githubusercontent.com/metaspook/numid/main/numid.sh | bash -s - -A
+~$ curl -sL https://example.com/myscript.sh | bash -s
 OR
-~$ wget -qO- https://raw.githubusercontent.com/metaspook/numid/main/numid.sh | bash -s - -A
+~$ wget -qO- https://example.com/myscript.sh | bash -s
+
+# Execute a Remote script with options/parameters/arguments.
+~$ curl -sL https://example.com/myscript.sh | bash -s - <place the script's options/parameters/arguments here>
+OR
+~$ wget -qO- https://example.com/myscript.sh | bash -s - <place the script's options/parameters/arguments here>
 
 ```
 </details>
