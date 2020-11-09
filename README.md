@@ -237,7 +237,7 @@ greenbone-nvt-sync --curl --verbose
 ```php
 // Escape string value for use in HTML.
 // Usages: html_escape("Replace string/variable here")
-function html_escape($str){ return '<pre>'.$str.'</pre>';}
+function html_escape($str){ return '<pre>'.htmlspecialchars($str).'</pre>';}
 
 // Escape string value for use in XML.
 // Usages: xml_escape("Replace string/variable here")
@@ -267,15 +267,15 @@ function string_sort($var){ return (strlen($var) && is_string($var)); }
 function con_dirsep($str){ return str_replace(['\\', '/'], DIRECTORY_SEPARATOR, $str); }
 
 // Convert given string's URLs to links.
-// Usages: url_2_link("Here is an example url: http://example.com")
-function url_2_link($str){ 
+// Usages: url2link("Here is an example url: http://example.com")
+function url2link($str){ 
     function u2l_callback($matches){ return '<a href="'.htmlspecialchars($matches[1]).'">'.$matches[1].'</a>';}
     return preg_replace_callback("#(\bhttps?://\S+\b)#",'u2l_callback',$str);
 }
 
 // Convert given word or phrase into valid HTML ID.
-// Usages: text_2_id("Replace Text for ID")
-function text_2_id($text, $prepend = null, $delimiter = '-'){
+// Usages: text2id("Replace Text for ID")
+function text2id($text, $prepend = null, $delimiter = '-'){
     $text = strtolower($text); $id = preg_replace('/\s/', $delimiter, $text);
     $id = preg_replace('/[^\w\-]/', '', $id); $id = trim($id, $delimiter);
     $prepend = (string) $prepend;
@@ -295,8 +295,8 @@ function strip_tags_ext($str, $allowableTags = '', $fallbackStr = ''){
 }
 
 // Replace newlines with paragraph tags in a block of text.
-// Usages: text_2_paragraph("Replace text string/variable here")
-function text_2_paragraph($str){return str_replace('<p></p>','','<p>'.preg_replace('#([\r\n]\s*?[\r\n]){2,}#','</p>$0<p>',$str).'</p>');}
+// Usages: text2paragraph("Replace text string/variable here")
+function text2paragraph($str){return str_replace('<p></p>','','<p>'.preg_replace('#([\r\n]\s*?[\r\n]){2,}#','</p>$0<p>',$str).'</p>');}
 
 // Returns current user's home directory of running system in obfuscated way.
 // Usages: echo get_home_dir();
@@ -324,9 +324,9 @@ function run_cmd($cmd) {
     if (!is_resource($process)) die("Can't execute command.");
     fclose($pipes[0]);$output = stream_get_contents($pipes[1]);
     fclose($pipes[1]);$error = stream_get_contents($pipes[2]);
-    fclose($pipes[2]);$code = proc_close($process);return $output;
+    fclose($pipes[2]);$code = proc_close($process);
+    return '<pre>'.htmlspecialchars($output).'</pre>';
 }
-
 ```
 </details>
 
