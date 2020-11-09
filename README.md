@@ -28,7 +28,7 @@ Input : Keyboard.
 ### Bash Script
 <details><summary>Click to collapse/fold.</summary><br/>
 	
-```bash
+```console
 # Execute a Remote script.
 ~$ curl -sL https://raw.githubusercontent.com/metaspook/numid/main/numid.sh | bash -s - -A
 OR
