@@ -25,6 +25,16 @@ Input : Keyboard.
 ```
 </details>
 
+### Bash Script
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```bash
+# Execute a Remote script.
+~$ curl -sL https://raw.githubusercontent.com/metaspook/numid/main/numid.sh | bash -s - -A
+~$ wget -qO- https://raw.githubusercontent.com/metaspook/numid/main/numid.sh | bash -s - -A
+
+```
+
 ### Batch Script
 <details><summary>Click to collapse/fold.</summary><br/>
 	
