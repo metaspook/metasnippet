@@ -22,6 +22,8 @@ CLI ---> Command Line Interface i.e. CUI (Console User Interface).
 Output: Text.
 Input : Keyboard.
 
+MVP (Minimum Viable Product).
+
 ```
 </details>
 
