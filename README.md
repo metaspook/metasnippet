@@ -254,6 +254,10 @@ greenbone-nvt-sync --curl --verbose
 <details><summary>Click to collapse/fold.</summary><br/>
 	
 ```php
+// Change browser's URL
+// Usages: browser_url("Replace full url or like 'file.php' here")
+function browser_url($url){ echo("<script>history.replaceState({},'','$url');</script>");}
+
 // Escape string value for use in HTML.
 // Usages: html_escape("Replace string/variable here")
 function html_escape($str){ return '<pre>'.htmlspecialchars($str).'</pre>';}
