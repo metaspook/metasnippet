@@ -23,6 +23,11 @@ Output: Text.
 Input : Keyboard.
 
 MVP (Minimum Viable Product).
+AMPPS = Apache, MySQL/MongoDB/SQLite, PHP/Perl/Python and Softaculous (auto-installer) + SQLite, FTP [Cross Platform][Freemium Open-Source]
+XAMPP = Apache, MySQL/MariaDB/SQLite and PHP/Pearl + phpMyAdmin + OpenSSL + FTP [Cross Platform][Free Open-Source]
+WAMP = Windows, Apache, MySQL, and PHP + phpMyAdmin + MariaDB + Adminer + PhpSysInfo [Windows][Free]
+MAMP = macOS, Apache/Nginx, PHP, Python, Perl or Ruby [macOS and Windows][Freemium Open-Source]
+LAMP = Linux, Apache, MySQL, and PHP, Pearl, Python [Linux OS][Free Open-Source]
 
 ```
 </details>
