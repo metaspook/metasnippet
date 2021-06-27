@@ -72,6 +72,156 @@ vulkaninfo
 ```
 </details>
 
+
+### Git Snippet
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```code
+
+Repository: Git is a repository, storage, or a location where every piece of code is stored.
+Fork: It means copying the code from one’s repository to yours.
+Upstream: The party which owns the code from where you have cop
+origin
+
+    The default upstream repository
+https://github.com/njnareshjoshi/articles/blob/master/useful-git-commands/UsefulGitCommands.md
+https://dzone.com/articles/introduction-to-git-flow
+https://dzone.com/refcardz/getting-started-git
+ git worktree list   
+repo        = Short form of "Repository"
+REPO_NAME   = Name of a Repository like "30DaysOfFlutter"
+REMOTE_URL  = https://github.com/metaspook/30DaysOfFlutter.git
+REMOTE_NAME = A named REMOTE_URL (Default REMOTE_NAME is "origin")
+BRANCH      = A branch name (Default BRANCH is "main")
+Fetch       = Get updated existing files
+Merge       = Get updated all files
+COMMIT_ID   = A identifier of commit's SHA hash like "4626de3"
+TAG         = Tag name of a commit like "v1.0"
+MESSAGE     = A message like "This is my first commit"
+N           = Number
+DIRECTORY   = A directory path
+FILE        = A file path
+USER        = An username like "metaspook"
+EMAIL       = An email address like "metaspook@gmail.com"
+<>          = Place Here
+[]          = Optional
+#           = Comments
+
+REMOTE ---------------------- LOCAL ---------------------------------------------
+Commits <- Upstream branch <- Remote-tracking branch <--> Commits <- Local branch
+           dev                origin/dev                             dev
+PROCESS: Initialization (once) -> Modification-> Staging -> Committing -> Pushing
+
+working tree Staging tracked files
+
+1. Create a working directory with a REPO_NAME
+2. Make working directory as local repo by initializing git on it.
+3. Create new files edit them or folder and edit them
+4. 
+
+# Configuration
+git config -l                               # list all config keys and values
+git config --global user.name "<USER>"      # set the username
+git config --global user.email "<EMAIL>"    # set the email
+git config --global credential.helper cache # cache your login credentials
+
+# Add, Clone and Initialize repos
+git remote add [<REMOTE_NAME>] <REMOTE_URL>            # Add a remote repo.
+git remote rename <OLD_REMOTE_NAME> <NEW_REMOTE_NAME>  # Rename a remote repo.
+git remote remove <REMOTE_NAME>                        # Remove a remote repo.
+git remote -v                                          # List added remote repos.
+git clone [-b <BRANCH>] <REMOTE_URL> [DIRECTORY]       # Clone a remote repo.
+git init [-b <BRANCH>] [DIRECTORY]                     # Initialize a local repo
+
+# Staging & Committing
+git add <FILE[*].. AND/OR DIRECTORY[*]..> # staging Single or Multiple or wildcarded.
+git add [-A] [.] [--dry-run]              # staging All of current directory or test dry-run.
+git reset                                 # restore to last commit 
+git reset --hard                          # restore to last commit , new staged file gone.
+git commit [-a] -m="<MESSAGE>"            # commit changes, Staging modified/deleted files by '-a'
+git reset --hard HEAD~                    # delete last commit, restore to previous.
+git reset --hard <COMMIT_ID>              # delete all before and restore to specific commit.
+git push <REMOTE_NAME> +HEAD              # push last commit deletion remote.
+git push <REMOTE_NAME> +<BRANCH>          # push all commit deletion remote.
+
+# Banching
+git branch <BRANCH>                      # Creat a new Branch, need commits
+git checkout [-b] <BRANCH>               # Switch to a Branch, new by '-b'
+git branch -a                            # List local and remote branches
+git branch -r                            # List remote-tracking branches
+git branch -u [<REMOTE_NAME>/<BRANCH>]   # Add current to remote-tracking branches
+git branch -d <BRANCH>                   # Delete local branch use '-D' instead of '-d' to force.
+git push <REMOTE_NAME> -d <BRANCH>       # Delete remote branch
+git branch -rd <BRANCH>                  # Delete local and remote-tracking branch
+git fetch [<REMOTE_NAME> <BRANCH>] [-all] # Fetch remote repo changes to current/specific/all branches.
+## Merge local/remote branch changes to current branch or test dry-run or abort merge conflict.
+git merge [<BRANCH>] [<REMOTE_NAME>/<BRANCH>] [--dry-run] [--abort]
+git pull [<REMOTE_NAME> <BRANCH>] [-all]  # Fetch and merge remote repo changes to current/specific/all branches.
+## Push current/specific/all branch to remote, upstream '-u' first time.
+git push [-u] [<REMOTE_NAME>] [<BRANCH>] [-all]
+## Branch renamig process
+git branch -M [<OLD_BRANCH>] <NEW_BRANCH>       # Rename an old or current to new
+git push <REMOTE_NAME> :refs/heads/<OLD_BRANCH> # Delete old remote branch (safe)
+git branch --unset-upstream <OLD_BRANCH>        # Unset old from upstream
+git push -u <REMOTE_NAME> <NEW_BRANCH>          # Push new branch and set upstream
+
+# Tagging
+git tag                                          # List all local tags 
+git tag show <TAG>                               # Details of a commit's tag
+git tag <TAG> [<COMMIT_ID>]                      # Create a tag for historical mark point 
+git tag <TAG> [<COMMIT_ID>] -af [-m="<MESSAGE>"] # Create a tag for release mark point.
+git tag –d <TAG> 	                             # Remove local tag
+git push <REMOTE_NAME> :refs/tags/<TAG>          # Remove remote tag (safe)
+## Tag renaming process
+git tag -d <OLD_TAG>                                     # Get the OLD_COMMIT_ID from output
+git tag <NEW_TAG> <OLD_COMMIT_ID> [-af] [-m="<MESSAGE>"] # Create a new tag with OLD_COMMIT_ID
+git push --tags                                          # Push all tags to remote
+git push <REMOTE_NAME> :refs/tags/<OLD_TAG>              # Remove remote tag (safe)
+git ls-remote --tags <REMOTE_NAME>                       # List all remote tags
+
+# Git Patch
+### Email-formatted (with author, date and message) or unformatted patch file like
+### "0001-commit-message.patch" from changes to reuse portability and share with other developer.
+## Patch Generation.
+git diff > <FILE>.patch                                       # All unstaged file changes to a unformatted patch file.
+git format-patch [-<N>] [<COMMIT_ID>] [-o <DIRECTORY>]        # From All/Specific/Last N'th Commits to patch files per commit.
+git format-patch [-<N>] [<COMMIT_ID>] --stdout > <FILE>.patch # From All/Specific/Last N'th Commit to a single patch file
+## Patch Application.
+git apply --stat file.patch                                  # pre-application stats.
+git apply --check file.patch                                 # pre-application error check
+git apply patch_file.patch                                   # patch application
+git diff                                                     # post-application review changes
+git add -A                                                   # post-application staging changes
+git commit -m="<MESSAGE>"                                    # post-application commit changes
+git am < file.patch                                          # patch application, staging and commit.
+git reset --hard HEAD~                                       # Restore the pre-application state.
+
+# Status, Logs, & Misc.
+git status                                   # State of the working directory and the staging area. 
+git log --oneline --graph --decorate --all   # Nice graph of all commit's log
+git log -p [<COMMIT_ID>]                     # A commit's history and file changes
+git log --stat [<COMMIT_ID>]                 # Number of Modified files and lines.
+git restore <FILE>                           # Restore unstaged file modification.
+git restore --staged                         # Restore to staged file unstaged state
+git rm <FILE>                                # remove tracked files
+git mv <OLD_FILE> <NEW_FILE>                 # rename/move tracked files
+git diff                                     # All unstaged file changes from last commit.
+git diff [<FILE>]                            # All/Specific unstaged file changes from last commit.
+git diff [<COMMIT_ID>]                       # Changes from specific commit to last commit or staged changes.
+git diff [<OLD_COMMIT_ID>] [<NEW_COMMIT_ID>] # Changes from specific commit to specific commit.
+
+# Backup & Restore
+## Backup repo from a old REMOTE_URL
+git clone --mirror <REMOTE_URL> <REPO_NAME>/.git
+cd <REPO_NAME>
+git config --unset core.bare
+git reset --hard
+## Restore repo to a new REMOTE_URL
+git push --mirror <REMOTE_URL>
+
+```
+</details>
+
 ### Laravel
 <details><summary>Click to collapse/fold.</summary><br/>
 	
