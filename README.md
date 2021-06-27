@@ -134,15 +134,15 @@ git clone [-b <BRANCH>] <REMOTE_URL> [DIRECTORY]       # Clone a remote repo.
 git init [-b <BRANCH>] [DIRECTORY]                     # Initialize a local repo
 
 # Staging & Committing
-git add <FILE[*].. AND/OR DIRECTORY[*]..> # staging Single or Multiple or wildcarded.
-git add [-A] [.] [--dry-run]              # staging All of current directory or test dry-run.
-git reset                                 # restore to last commit 
-git reset --hard                          # restore to last commit , new staged file gone.
-git commit [-a] -m="<MESSAGE>"            # commit changes, Staging modified/deleted files by '-a'
-git reset --hard HEAD~                    # delete last commit, restore to previous.
-git reset --hard <COMMIT_ID>              # delete all before and restore to specific commit.
-git push <REMOTE_NAME> +HEAD              # push last commit deletion remote.
-git push <REMOTE_NAME> +<BRANCH>          # push all commit deletion remote.
+git add <FILE[*].. AND/OR DIRECTORY[*]..>  # staging Single or Multiple or wildcarded.
+git add [-A] [.] [--dry-run]               # staging All of current directory or test dry-run.
+git reset                                  # restore to last commit 
+git reset --hard                           # restore to last commit , new staged file gone.
+git commit [--amend] [-a] [-m="<MESSAGE>"] # commit changes, '--amend' modify last commit, '-a' staging modified/deleted files.
+git reset --hard HEAD~                     # delete last commit, restore to previous.
+git reset --hard <COMMIT_ID>               # delete all before and restore to specific commit.
+git push <REMOTE_NAME> +HEAD               # push last commit deletion/modification to remote.
+git push <REMOTE_NAME> +<BRANCH>           # push all commit deletion/modification to remote.
 
 # Banching
 git branch <BRANCH>                      # Creat a new Branch, need commits
