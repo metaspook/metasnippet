@@ -632,6 +632,17 @@ Press Shift + F10
 Checkpoint-IscsiVirtualDisk -OriginalPath "D:\VHDs\DB.vhdx"
 Checkpoint-IscsiVirtualDisk -OriginalPath "D:\VHDs\DB.vhdx" -Description "Before database merge" -ComputerName "fssvr.contoso.com"
 ```
+```pwsh
+# Test mode in windows 10+ let user test Microsoft unsigned applications.
+# Run below commands in CMD/PowerShell as Administrator and reboot your system.
+
+# Remove test mode watermark.
+# Disable test mode.
+bcdedit -set TESTSIGNING OFF
+
+# Enable test mode (adds a watermark).
+bcdedit -set TESTSIGNING ON
+```
 </details>
 
 ### WSL (Windows Subsystem for Linux)
