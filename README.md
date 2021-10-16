@@ -638,9 +638,11 @@ Checkpoint-IscsiVirtualDisk -OriginalPath "D:\VHDs\DB.vhdx" -Description "Before
 
 # Remove test mode watermark.
 # Disable test mode.
+# Enable Driver Signature Enforcement.
 bcdedit -set TESTSIGNING OFF
 
 # Enable test mode (adds a watermark).
+# Disable Driver Signature Enforcement.
 bcdedit -set TESTSIGNING ON
 ```
 </details>
