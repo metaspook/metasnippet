@@ -59,7 +59,7 @@ echo %path:;=&echo.%
 ```
 </details>
 	
-### Dart Script
+### Dart lang
 <details><summary>Click to collapse/fold.</summary><br/>
 	
 #### Type Systems Chart v0.2
