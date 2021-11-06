@@ -61,9 +61,11 @@ echo %path:;=&echo.%
 	
 ### Dart Script
 <details><summary>Click to collapse/fold.</summary><br/>
-#### Type Systems Chart v0.1
-```code
 	
+#### Type Systems Chart v0.2
+```code
+                   * Type Systems Chart v1.0 *
+                   ===========================
  +--Annotations-+-------------------Details-------------------+
  | void         | Type omitted, value can't be used           |
  | Never        | Throw exception/abort/expression never run  |
@@ -99,7 +101,6 @@ echo %path:;=&echo.%
  | Members : Class constructor/field/methods/operator         |
  | Property: Field-like Class member constructs               |
  +------------------------------------------------------------+
-
 ```
 </details>
 	
