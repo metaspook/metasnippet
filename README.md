@@ -64,7 +64,7 @@ echo %path:;=&echo.%
 	
 #### Type Systems Chart v0.2
 ```code
-                   * Type Systems Chart v1.0 *
+                   * Type Systems Chart v0.2 *
                    ===========================
  +--Annotations-+-------------------Details-------------------+
  | void         | Type omitted, value can't be used           |
