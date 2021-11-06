@@ -58,7 +58,52 @@ echo %path:;=&echo.%
 
 ```
 </details>
+	
+### Dart Script
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+#### Type Systems Chart v0.1
+```code
 
+                   * Type Systems Chart v0.1 *
+                   ===========================
+ +--Annotations-+-------------------Details-------------------+
+ | void         | Type omitted, value can't be used           |
+ | Never        | Throw exception/abort/expression never run  |
+ |              +-----------------Reset-Value-----------------+
+ | Null         | No object, 'null' as value                  |
+ + Object       | Any T, no instance member and 'null'        |
+ |_ String      | String: UTF-16 code or text inside "" or '' |
+ |_ num         | int/double, no instance member              |
+ |  |_ int      | Numbers: 64-bit Integer                     |
+ |  |_ double   | Num.ers: 64-bit Floating point, int         |
+ |_ bool        | Booleans: 'true' and 'false'                |
+ |_ Iterable<T> | List/Set, no instance member +----Element---+
+ |  |_ List <T> | List of [val,ues]            | List         |
+ |  |_ Set  <T> | Set of {unique,values}       | Set          |
+ |_ Map   <T,T> | Map of {key:value} pairs     | Map          |
+ +-Inferrers-+  |                              |              |
+ |  dynamic  |  | Any T, nonexistent instance  | List/Set/Map |
+ +-----------+--+ member allowed.              |              |
+ |  var      |  | Static T, same T             | List/Set/Map |
+ |  final T  |  | Static T, set once.          | List/Set/Map |
+ |  const T  |  | Static T, set once           +--------------+
+ +-----------+  | at defining, compile-time constant.         |
+ | Future<T>    | Future type (asynchronous expression)       |
+ | Stream<T>    | Stream type (asynchronous expression)       |
+ +--------------+---------------------------------------------+
+ | [T]ypes : Named T declaration of class/typedef/enum.       |
+ | Return T: Future, Stream and all types in Annotations.     |
+ | Nullable: Types in Annotations are nullable as T?          |
+ | Fields  : Variables declared in Class.                     |
+ | Methods : Class functions, getter and setter               |
+ | Members : Class constructor/field/methods/operator         |
+ | Property: Field-like Class member constructs               |
+ +------------------------------------------------------------+
+
+```
+</details>
+	
 ### Drivers/Runtimes/SDK
 <details><summary>Click to collapse/fold.</summary><br/>
 	
