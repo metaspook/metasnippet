@@ -61,12 +61,8 @@ echo %path:;=&echo.%
 	
 ### Dart Script
 <details><summary>Click to collapse/fold.</summary><br/>
-	
 #### Type Systems Chart v0.1
 ```code
-
-                   * Type Systems Chart v0.1 *
-                   ===========================
  +--Annotations-+-------------------Details-------------------+
  | void         | Type omitted, value can't be used           |
  | Never        | Throw exception/abort/expression never run  |
@@ -87,10 +83,12 @@ echo %path:;=&echo.%
  +-----------+--+ member allowed.              |              |
  |  var      |  | Static T, same T             | List/Set/Map |
  |  final T  |  | Static T, set once.          | List/Set/Map |
- |  const T  |  | Static T, set once           +--------------+
- +-----------+  | at defining, compile-time constant.         |
+ |  const T  |  | Static T, set once at        +--------------+
+ +-----------+  | defining only, compile-time constant.       |
  | Future<T>    | Future type (asynchronous expression)       |
  | Stream<T>    | Stream type (asynchronous expression)       |
+ +--------------+---------------------------------------------+
+ | Priority--> const T > final T > T > var > object > dynamic |
  +--------------+---------------------------------------------+
  | [T]ypes : Named T declaration of class/typedef/enum.       |
  | Return T: Future, Stream and all types in Annotations.     |
