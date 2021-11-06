@@ -63,6 +63,7 @@ echo %path:;=&echo.%
 <details><summary>Click to collapse/fold.</summary><br/>
 #### Type Systems Chart v0.1
 ```code
+	
  +--Annotations-+-------------------Details-------------------+
  | void         | Type omitted, value can't be used           |
  | Never        | Throw exception/abort/expression never run  |
