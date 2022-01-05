@@ -92,7 +92,7 @@ echo %path:;=&echo.%
  | Stream<T>    | Stream type (asynchronous expression)       |
  +--------------+---------------------------------------------+
  | Priority--> const T > final T > T > var > object > dynamic |
- +--------------+---------------------------------------------+
+ +------------------------------------------------------------+
  | [T]ypes : Named T declaration of class/typedef/enum.       |
  | Return T: Future, Stream and all types in Annotations.     |
  | Nullable: Types in Annotations are nullable as T?          |
@@ -103,7 +103,36 @@ echo %path:;=&echo.%
  +------------------------------------------------------------+
 ```
 	
-#### Control Flow
+#### Function Cheats
+```code
+ /// Function Cheats ///
+ 
+ funcName(parameters) {expressions...};    // Defining
+ |______||__________| |______________|
+   Name      Head           Body
+  ______  _________
+ |      ||         |
+ funcName(arguments);                      // Calling
+ funcName(function as argument);           // Callback
+funcName(parameters) => expression;        // Named Arrow
+funcName(parameters) { expressions... };   // Named
+(parameters) => expression;                // Anonymous Arrow (Lambda)
+(parameters) { expressions... };           // Anonymous
+
+```
+	
+#### Parameter Cheats
+```code
+ /// Parameter Cheats ///
+
+({required parameter})                    // Named Required
+({parameter = initialValue})              // Named Optional
+(parameter)                               // Positional Required
+([parameter = initialValue])              // Positional Optional
+(positionalParameter, {namedParameter})   // Hybrid Parameters
+```
+	
+#### Conditional Statement
 ```dart
 void main() {
   // var inNum = 3.5;
