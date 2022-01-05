@@ -114,11 +114,10 @@ echo %path:;=&echo.%
  |      ||         |
  funcName(arguments);                      // Calling
  funcName(function as argument);           // Callback
-funcName(parameters) => expression;        // Named Arrow
 funcName(parameters) { expressions... };   // Named
-(parameters) => expression;                // Anonymous Arrow (Lambda)
+funcName(parameters) => expression;        // Named Arrow
 (parameters) { expressions... };           // Anonymous
-
+(parameters) => expression;                // Anonymous Arrow (Lambda)
 ```
 	
 #### Parameter Cheats
