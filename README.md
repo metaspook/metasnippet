@@ -64,8 +64,8 @@ echo %path:;=&echo.%
 	
 #### Type Systems Chart v0.2
 ```code
-                   * Type Systems Chart v0.2 *
-                   ===========================     © Metaspook
+                 * Type Systems Chart v0.2 *
+                 ===========================       © Metaspook
  +--Annotations-+-------------------Details-------------------+
  | void         | Type omitted, value can't be used           |
  | Never        | Throw exception/abort/expression never run  |
