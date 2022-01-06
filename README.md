@@ -65,7 +65,7 @@ echo %path:;=&echo.%
 #### Type Systems Chart v0.2
 ```code
                    * Type Systems Chart v0.2 *
-                   ===========================
+                   ===========================    © Metaspook
  +--Annotations-+-------------------Details-------------------+
  | void         | Type omitted, value can't be used           |
  | Never        | Throw exception/abort/expression never run  |
@@ -101,11 +101,12 @@ echo %path:;=&echo.%
  | Members : Class constructor/field/methods/operator         |
  | Property: Field-like Class member constructs               |
  +------------------------------------------------------------+
+ 
 ```
 	
 #### Function Cheats
 ```code
- /// Function Cheats ///
+ /// Function Cheats ///   © Metaspook
  
  funcName(parameters) {expressions...};            // Defining
  |______||__________| |______________|
@@ -123,7 +124,7 @@ funcName(parameters) { ... funcName(parameters) }; // Recursion
 	
 #### Parameter Cheats
 ```code
- /// Parameter Cheats ///
+ /// Parameter Cheats ///   © Metaspook
 
 ({required parameter})                    // Named Required
 ({parameter = initialValue})              // Named Optional
