@@ -101,7 +101,6 @@ echo %path:;=&echo.%
  | Members : Class constructor/field/methods/operator         |
  | Property: Field-like Class member constructs               |
  +------------------------------------------------------------+
- 
 ```
 	
 #### Function Cheats
