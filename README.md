@@ -205,12 +205,12 @@ void main() {
 ```code
 Stack => LIFO (Last In First Out)
  4 
----  ^   
- 3   |
+---   ^   
+ 3    |
 ---  pop
  2   push
----  |
- 1   v
+---   |
+ 1    v
 ---
  0 | 1 | 2 | 3 | 4
  <- dequeue  <-enqueue
