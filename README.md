@@ -199,6 +199,50 @@ void main() {
 	
 </details>
 	
+### Data Structures
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```code
+Stack => LIFO (Last In First Out)
+ 4 
+---  ^   
+ 3   |
+---  pop
+ 2   push
+---  |
+ 1   v
+---
+ 0 | 1 | 2 | 3 | 4
+ <- dequeue  <-enqueue
+Queue => FIFO (First In First Out)
+```
+</details>
+	
+### Terminology
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```code
+std -> standard
+err -> error
+io  -> input output
+lib -> library
+
+Standard streams
+----------------
+stdin  -> standard input
+stdout -> standard output
+stderr -> standard error
+
++---------------+---------------+
+| Text terminal |    Process    |
++---------------+---------------+
+|  Keyboard     +--> stdin      |
+|               |               |
+|  Display   <--+ stdout/stderr +
++---------------+---------------+
+```
+</details>
+	
 ### Drivers/Runtimes/SDK
 <details><summary>Click to collapse/fold.</summary><br/>
 	
