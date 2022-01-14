@@ -145,6 +145,19 @@ Number     num           |_ List     List
 |_ Double  double
 ```
 	
+#### Solutions
+```dart
+// navigate to first route and remove all previous.
+Navigator.of(context).popUntil((Route route) => route.isFirst),
+
+
+// navigate to first route and remove all previous (named). (not tested)
+Navigator.of(context).popUntil(ModalRoute.withName('/root'));
+
+// resize widgets with no width/height property.
+Transform.scale( scale: 2.0, child: <target widget here> )
+```
+	
 #### Conditional Statement
 ```dart
 void main() {
