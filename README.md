@@ -132,6 +132,18 @@ funcName(parameters) { ... funcName(parameters) }; // Recursion
 (positionalParameter, {namedParameter})   // Hybrid Parameters
 ```
 	
+#### Built-in types
+```code
+1. Data Types            2. Collections
+Type       Keyword       Type       Keyword
+----       -------       ----       -------
+String     String        Map         Map
+Boolean    bool          Iterable    Iterable
+Number     num           |_ List     List
+|_ Integer int           |_ Set      Set
+|_ Double  double
+```
+	
 #### Conditional Statement
 ```dart
 void main() {
