@@ -134,7 +134,8 @@ funcName(parameters) { ... funcName(parameters) }; // Recursion
 	
 #### Built-in types
 ```code
-1. Data Types            2. Collections
+   1. Data Types     |     2. Collections
+---------------------+----------------------
 Type       Keyword       Type        Keyword
 ----       -------       ----        -------
 String     String        Map         Map
