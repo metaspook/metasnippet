@@ -150,7 +150,6 @@ Number     num           |_ List     List
 // navigate to first route and remove all previous.
 Navigator.of(context).popUntil((Route route) => route.isFirst),
 
-
 // navigate to first route and remove all previous (named). (not tested)
 Navigator.of(context).popUntil(ModalRoute.withName('/root'));
 
