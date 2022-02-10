@@ -59,6 +59,19 @@ echo %path:;=&echo.%
 ```
 </details>
 	
+### Character Sets
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```code
++---------+----------CHARACTER-SETS-----------+
+| special | !"#$%&'()*+,- ./:;<=>?@[\]^_`{|}~ |
+| upper   | ABCDEFGHIJKLMNOPQRSTUVWXYZ        |
+| lower   | abcdefghijklmnopqrstuvwxyz        |
+| number  | 0123456789                        |
++---------+-----------------------------------+
+```
+</details>
+	
 ### Dart lang
 <details><summary>Click to collapse/fold.</summary><br/>
 	
