@@ -21,6 +21,7 @@ Input : Mouse, Keyboard.
 CLI ---> Command Line Interface i.e. CUI (Console User Interface).
 Output: Text.
 Input : Keyboard.
+PUP (Potentially Unwanted Products)
 
 MVP (Minimum Viable Product).
 AMPPS = Apache, MySQL/MongoDB/SQLite, PHP/Perl/Python and Softaculous (auto-installer) + SQLite, FTP [Cross Platform][Freemium Open-Source]
