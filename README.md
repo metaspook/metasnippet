@@ -21,8 +21,8 @@ Input : Mouse, Keyboard.
 CLI ---> Command Line Interface i.e. CUI (Console User Interface).
 Output: Text.
 Input : Keyboard.
+	
 PUP (Potentially Unwanted Products)
-
 MVP (Minimum Viable Product).
 AMPPS = Apache, MySQL/MongoDB/SQLite, PHP/Perl/Python and Softaculous (auto-installer) + SQLite, FTP [Cross Platform][Freemium Open-Source]
 XAMPP = Apache, MySQL/MariaDB/SQLite and PHP/Pearl + phpMyAdmin + OpenSSL + FTP [Cross Platform][Free Open-Source]
@@ -30,6 +30,19 @@ WAMP = Windows, Apache, MySQL, and PHP + phpMyAdmin + MariaDB + Adminer + PhpSys
 MAMP = macOS, Apache/Nginx, PHP, Python, Perl or Ruby [macOS and Windows][Freemium Open-Source]
 LAMP = Linux, Apache, MySQL, and PHP, Pearl, Python [Linux OS][Free Open-Source]
 
+## User Log state form conventions.
+Default : "Sign up"    == "Register"    == "Create an account"
+Process : "Signing up" == "Registering" == "Creating an account"
+Complete: "Signed up"  == "Registered"  == "Account created"
+	
+Default : "Sign in"   == "Log in"    == "Sign/Log into app"
+Process : "Signing"   == "Logging"   == "Signing/Logging into app"
+Complete: "Signed in" == "Logged in" == "Signed/Logged into app"
+
+Default : "Sign out"    == "Log out"     == "Sign/Log out from app"
+Process : "Signing out" == "Logging out" == "Signing/Logging out from app"
+Complete: "Signed out"  == "Logged out"  == "Signed/Logged out from app"
+	
 ```
 </details>
 
