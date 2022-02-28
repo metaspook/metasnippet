@@ -43,6 +43,9 @@ Default : "Sign out"    == "Log out"     == "Sign/Log out from app"
 Process : "Signing out" == "Logging out" == "Signing/Logging out from app"
 Complete: "Signed out"  == "Logged out"  == "Signed/Logged out from app"
 	
+## User Log state information.
+Login/Signin detected/recorded.
+	
 ```
 </details>
 
