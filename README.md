@@ -185,6 +185,12 @@ Navigator.of(context).popUntil(ModalRoute.withName('/root'));
 
 // resize widgets with no width/height property.
 Transform.scale( scale: 2.0, child: <target widget here> )
+	
+// override setState to check if widget is mounted.
+@override
+void setState(fn) {
+  if (mounted) super.setState(fn);
+}
 ```
 	
 #### Conditional Statement
