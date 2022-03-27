@@ -29,7 +29,8 @@ XAMPP = Apache, MySQL/MariaDB/SQLite and PHP/Pearl + phpMyAdmin + OpenSSL + FTP 
 WAMP = Windows, Apache, MySQL, and PHP + phpMyAdmin + MariaDB + Adminer + PhpSysInfo [Windows][Free]
 MAMP = macOS, Apache/Nginx, PHP, Python, Perl or Ruby [macOS and Windows][Freemium Open-Source]
 LAMP = Linux, Apache, MySQL, and PHP, Pearl, Python [Linux OS][Free Open-Source]
-
+PODO (Plain Old Dart Object).
+	
 ## User Log state form conventions.
 Default : "Sign up"    == "Register"    == "Create an account"
 Process : "Signing up" == "Registering" == "Creating an account"
