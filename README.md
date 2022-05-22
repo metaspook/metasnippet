@@ -157,11 +157,15 @@ funcName(parameters) { ... funcName(parameters) }; // Recursion
 ```code
  /// Parameter Cheats ///                      © Metaspook
 
-({required parameter})                    // Named Required
-({parameter = initialValue})              // Named Optional
-(parameter)                               // Positional Required
-([parameter = initialValue])              // Positional Optional
-(positionalParameter, {namedParameter})   // Hybrid Parameters
+({required parameter})                     // Named Required
+({required parameter?})                    // Named Required Nullable
+({parameter = defaultValue})               // Named Optional
+({parameter?})                             // Named Optional Nullable
+(parameter)                                // Positional Required
+(parameter?)                               // Positional Required Nullable
+([parameter = defaultValue])               // Positional Optional
+([parameter?])                             // Positional Optional Nullable
+(positionalParameters, {namedParameters})  // Hybrid Parameters
 ```
 	
 #### Built-in types
