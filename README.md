@@ -137,12 +137,13 @@ echo %path:;=&echo.%
 #### Function Cheats
 ```code
  /// Function Cheats ///                          © Metaspook
- 
- funcName(parameters) {expressions...};            // Defining
- |______||__________| |______________|
-   Name      Head           Body
-  ______  _________
- |      ||         |
+
+ funcName(parameters) {expressions...};          // Defining (Block body)           
+ funcName(parameters) => expression;             // Defining (Expression body)
+ |______||__________| |_______________|	           
+   Name      Head           Body             
+  ______  _________ 
+ |      ||         |        
  funcName(arguments);                              // Calling
  funcName(function as argument);                   // Callback
 funcName(parameters) { expressions... };           // Named
