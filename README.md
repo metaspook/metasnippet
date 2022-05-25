@@ -90,7 +90,7 @@ echo %path:;=&echo.%
 ```
 </details>
 	
-### Dart lang
+### Dart & Flutter
 <details><summary>Click to collapse/fold.</summary><br/>
 	
 #### Type Systems Chart v0.2
@@ -191,6 +191,12 @@ Navigator.of(context).popUntil(ModalRoute.withName('/root'));
 
 // resize widgets with no width/height property.
 Transform.scale( scale: 2.0, child: <target widget here> )
+	
+// Support other language/special characters from network data.
+jsonDecode(response.body);                                     
+jsonDecode(utf8.decode(response.bodyBytes));                  // use this way instead of above.
+await http.get(Uri.parse("<place uri here>"),                 // specify the headers (optional).
+headers: {"content-type": "application/json; charset=utf-8"});  
 	
 // override setState to check if widget is mounted.
 @override
