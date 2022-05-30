@@ -196,7 +196,8 @@ Transform.scale( scale: 2.0, child: <target widget here> )
 jsonDecode(response.body);                                     
 jsonDecode(utf8.decode(response.bodyBytes));                  // use this way instead of above.
 await http.get(Uri.parse("<place uri here>"),                 // specify the headers (optional).
-headers: {"content-type": "application/json; charset=utf-8"});  
+headers: {"content-type": "application/json; charset=utf-8"});
+OR headers: {HttpHeaders.contentTypeHeader: "application/json; charset=utf-8"});
 	
 // override setState to check if widget is mounted.
 @override
