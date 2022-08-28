@@ -183,6 +183,11 @@ Number     num           |_ List     List
 	
 #### Solutions
 ```dart
+// Memory location of a variable/object.
+// In Dart we can't access memory location directly, instead using 'identityHashCode()'
+// method we can get an object's unique hasCode that can be used as its id.
+identityHashCode(Object object);
+
 // navigate to first route and remove all previous.
 Navigator.of(context).popUntil((Route route) => route.isFirst),
 
