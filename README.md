@@ -183,6 +183,13 @@ Number     num           |_ List     List
 	
 #### Solutions
 ```dart
+
+// Get file size in dart.
+// 8 bit = 1 byte | 1024 byte 1 kb | 1024 kb 1 mb | 1024 mb 1 gb | 1024 gb 1 tb.
+final bytes = image.readAsBytesSync().lengthInBytes;
+final kb = bytes / 1024;
+final mb = kb / 1024;
+
 // Memory location of a variable/object.
 // In Dart we can't access memory location directly, instead using 'identityHashCode()'
 // method we can get an object's unique hasCode that can be used as its id.
