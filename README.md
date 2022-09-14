@@ -889,6 +889,25 @@ pushd "%PROGRAMFILES%\Oracle\VirtualBox"
 </details></td></tr></tbody>
 </table>
 
+### Tips n Tricks
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```batch
+:: Clear DNS Cache on Windows
+CMD: ipconfig /flushdns
+:: Clear DNS Cache on Chrome
+Address bar: chrome://net-internals/#dns
+:: Clear DNS Cache on Opera
+Address bar: opera://net-internals/#dns
+:: Clear DNS Cache on Edge
+Address bar: edge://net-internals/#dns
+:: Clear DNS Cache on Firefox
+Address bar: about:networking#dns
+:: Clear DNS Cache on Safari
+Safari menu > Preferences > Advanced tab > check 'Show Develop menu in menu bar'.
+```
+</details>
+
 ### Windows
 <details><summary>Click to collapse/fold.</summary><br/>
 	
