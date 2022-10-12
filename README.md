@@ -134,6 +134,25 @@ echo %path:;=&echo.%
  +------------------------------------------------------------+
 ```
 	
+#### Variable Cheats
+```code
+ /// Variable Cheats ///                          © Metaspook
+
+ String name = 'Metaspook';
+.   |    |   |      |     |____________  Terminator.           
+.   |    |   |      |__________________  Value.
+.   |    |   |_________________________  Initializer.
+.   |    |_____________________________  Variable name.
+.   |__________________________________  Data type.
+
+
+// Naming conventions.
+// Singular word represents single object plural word represents multiple objects as List/Set/Array of objects
+// Example:  
+final String name;
+final List<String> names;
+```
+
 #### Function Cheats
 ```code
  /// Function Cheats ///                          © Metaspook
