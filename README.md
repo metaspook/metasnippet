@@ -203,6 +203,15 @@ Number     num           |_ List     List
 #### Solutions
 ```dart
 
+// List | conversion duplicate elements to unique elements
+List<int> ids = [1, 4, 4, 4, 5, 6, 6];
+//^ using toSet(), toList() methods
+List<int> uniqueIds = ids.toSet().toList();
+//^ using spread operator (req. Dart v2.3+)
+List<int> uniqueIds = [...{...ids}];
+//^ result
+[1, 4, 5, 6]
+  
 // Get file size in dart.
 // 8 bit = 1 byte | 1024 byte 1 kb | 1024 kb 1 mb | 1024 mb 1 gb | 1024 gb 1 tb.
 final bytes = image.readAsBytesSync().lengthInBytes;
