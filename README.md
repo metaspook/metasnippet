@@ -310,6 +310,19 @@ void main() {
   }
 }
 ```
+
+#### Installation
+```code
+// Environment variables
+* Add in system variable
+* "FLUTTER_ROOT": "%SystemDrive%\flutter",
+* "JAVA_HOME": %ProgramFiles%\Android\Android Studio\jre
+* (windows) add in 'Path' of user variable "%FLUTTER_ROOT%\bin"
+* (windows) add in 'Path' of user variable  %JAVA_HOME%\bin
+(optional) "PUB_ENVIRONMENT": "flutter_cli:get",
+(optional) "PUB_CACHE": "%LocalAppData%\Pub\Cache"
+(optional) "PUB_HOSTED_URL": "https://pub.dev"
+```
 	
 </details>
 	
