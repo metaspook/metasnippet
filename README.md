@@ -203,7 +203,7 @@ Collections (data structures).
 ------------------------------
 Type       Keyword   Value demo                        Description
 ----       -------   ----------                        -----------
-Map        Map       {'name': 'Picard', 'age': 81}     elements as key-value pairs
+Map        Map       {1: 'Picard', 'isMale': true}     elements as key: value pairs.
 Iterables  Iterable  ['Book', 1, 1] OR {'Book', 1, 2}  parent of List and Set.
 |_ List    List      ['Book', 1, 1]                    array of elements.
 |_ Set     Set       {'Book', 1, 2}                    array of unique elements.
