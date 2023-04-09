@@ -436,13 +436,15 @@ git config --global user.name "<USER>"      # set the username
 git config --global user.email "<EMAIL>"    # set the email
 git config --global credential.helper cache # cache your login credentials
 
-# Add, Clone and Initialize repos
-git remote add [<REMOTE_NAME>] <REMOTE_URL>            # Add a remote repo.
-git remote rename <OLD_REMOTE_NAME> <NEW_REMOTE_NAME>  # Rename a remote repo.
-git remote remove <REMOTE_NAME>                        # Remove a remote repo.
-git remote -v                                          # List added remote repos.
-git clone [-b <BRANCH>] <REMOTE_URL> [DIRECTORY]       # Clone a remote repo.
-git init [-b <BRANCH>] [DIRECTORY]                     # Initialize a local repo
+# Add, Clone, archive and Initialize repos
+git remote add [<REMOTE_NAME>] <REMOTE_URL>                # Add a remote repo.
+git remote rename <OLD_REMOTE_NAME> <NEW_REMOTE_NAME>      # Rename a remote repo.
+git remote remove <REMOTE_NAME>                            # Remove a remote repo.
+git remote -v                                              # List added remote repos.
+git clone [-b <BRANCH>] <REMOTE_URL> [DIRECTORY]           # Clone a remote repo.
+git clone <SOURCE_DIR>  <TARGET_DIR>                       # Clone repo dir to dir.
+git archive -o output[.zip|.tar|.tar.gz] <BRANCH> OR HEAD  # Archive a repo
+git init [-b <BRANCH>] [DIRECTORY]                         # Initialize a local repo
 
 # Staging & Committing
 git add <FILE[*].. AND/OR DIRECTORY[*]..>  # staging Single or Multiple or wildcarded.
