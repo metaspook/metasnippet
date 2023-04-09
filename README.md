@@ -187,17 +187,26 @@ funcName(parameters) { ... funcName(parameters) }; // Recursion
 (positionalParameters, {namedParameters})  // Hybrid Parameters
 ```
 	
-#### Built-in types
+#### DATA TYPES
 ```code
-1. Data Types        |   2. Collections
----------------------+----------------------
-Type       Keyword       Type        Keyword
-----       -------       ----        -------
-String     String        Map         Map
-Boolean    bool          Iterable    Iterable
-Number     num           |_ List     List
-|_ Integer int           |_ Set      Set
-|_ Double  double
+Built-in types.
+---------------
+Type       Keyword  Value demo      Description
+----       -------  ----------      -----------
+String      String  "I'm Picard 2"  utf-16 characters, in '' OR "" mark.
+Boolean     bool    true            either true OR false.
+Numbers     num     81 OR 5.10      parent of integer and double.
+|_ Integer  int     81              integer number.
+|_ Double   double  5.10            floating point number.
+	
+Collections (data structures).
+------------------------------
+Type       Keyword   Value demo                        Description
+----       -------   ----------                        -----------
+Map        Map       {'name': 'Picard', 'age': 81}     elements as key-value pairs
+Iterables  Iterable  ['Book', 1, 1] OR {'Book', 1, 2}  parent of List and Set.
+|_ List    List      ['Book', 1, 1]                    array of elements.
+|_ Set     Set       {'Book', 1, 2}                    array of unique elements.
 ```
 	
 #### Solutions
