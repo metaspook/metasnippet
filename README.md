@@ -220,7 +220,7 @@ snake_case      File | Folder
 Variable (object identifier),
 pick a variable name that represents the object it identifies.
 --------------------------------------------------------------
-Name demo       Data type
+Name demo       Value type
 --------------  -------------------------
 user            Built-in/custom/model
 users/userList  Iterables/List/Set
