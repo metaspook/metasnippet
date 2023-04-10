@@ -187,7 +187,7 @@ funcName(parameters) { ... funcName(parameters) }; // Recursion
 (positionalParameters, {namedParameters})  // Hybrid Parameters
 ```
 	
-#### DATA TYPES
+#### Data Types
 ```code
 Built-in types.
 ---------------
@@ -207,6 +207,27 @@ Map        Map       {1: 'Picard', 'isMale': true}     elements as key: value pa
 Iterables  Iterable  ['Book', 1, 1] OR {'Book', 1, 2}  parent of List and Set.
 |_ List    List      ['Book', 1, 1]                    array of elements.
 |_ Set     Set       {'Book', 1, 2}                    array of unique elements.
+```
+	
+#### Naming Conventions
+```code
+Convention      Name of
+--------------  ----------------------
+lowerCamelCase  variable | function
+UpperCamelCase  Class | Enum | Typedef
+snake_case      File | Folder
+	
+Variable (object identifier),
+pick a variable name that represents the object it identifies.
+--------------------------------------------------------------
+Name demo       Data type
+-------------  ---------------------------
+user            Built-in/custom/model
+users/userList  Iterables/List/Set
+userMap         Map
+userMaps        Iterables/List/Set of Map
+userJson        JSON object
+userJsons       array of JSON objects
 ```
 	
 #### Solutions
