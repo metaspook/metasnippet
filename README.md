@@ -189,7 +189,7 @@ funcName(parameters) { ... funcName(parameters) }; // Recursion
 	
 #### Data Types
 ```code
-Built-in types.
+Built-in types.                          © Metaspook
 ---------------
 Type       Keyword  Value demo      Description
 ----       -------  ----------      -----------
@@ -211,13 +211,13 @@ Iterables  Iterable  ['Book', 1, 1] OR {'Book', 1, 2}  parent of List and Set.
 	
 #### Naming Conventions
 ```code
-Convention      Name of
+Convention      Name of                          © Metaspook
 --------------  ----------------------
 lowerCamelCase  variable | function
 UpperCamelCase  Class | Enum | Typedef
 snake_case      File | Folder
 	
-Variable name (must represents the object it identifies).
+Variable name (must represents the object it identifies and no number on first character).
 ---------------------------------------------------------
 Name demo       Value type
 --------------  -------------------------
