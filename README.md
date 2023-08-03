@@ -285,6 +285,16 @@ OR headers: {HttpHeaders.contentTypeHeader: "application/json; charset=utf-8"});
 void setState(fn) {
   if (mounted) super.setState(fn);
 }
+
+// Resize an AlertDialog
+AlertDialog(
+  insetPadding: const EdgeInsets.all(10),
+  content: SizedBox(
+    width: MediaQuery.of(context).size.width,
+    child: const Text("Content"),
+  ),
+);
+
 ```
 	
 #### Conditional Statement
