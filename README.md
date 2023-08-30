@@ -495,6 +495,7 @@ git remote -v                                              # List added remote r
 git clone [-b <BRANCH>] <REMOTE_URL> [DIRECTORY]           # Clone a remote repo.
 git clone <SOURCE_DIR>  <TARGET_DIR>                       # Clone repo dir to dir.
 git archive -o output[.zip|.tar|.tar.gz] <BRANCH> OR HEAD  # Archive a repo
+git bundle create  --progress fullRepo.bundle --all
 git init [-b <BRANCH>] [DIRECTORY]                         # Initialize a local repo
 
 # Staging & Committing
