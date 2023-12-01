@@ -240,6 +240,22 @@ userMaps        Iterables/List/Set of Map
 userJson        JSON object
 userJsons       array of JSON objects
 ```
+
+#### Commands
+```console
+# Install Very Good CLI.
+dart pub global activate very_good_cli
+# Create project by Very Good CLI (--desc/--org optional, 'very_good.bat' if git-bash windows).
+very_good create flutter_app project_name --desc "An educational app." --org dev.metaspook
+# Upgrade Flutter SDK
+flutter upgrade
+# Clean Flutter project build cache (Run from project directoy).
+flutter clean
+# Repair Flutter project pub cache (Run from project directoy).
+flutter pub cache repair
+# Clean Flutter project pub cache (Run from project directoy).
+flutter pub cache clean
+```
 	
 #### Solutions
 ```dart
@@ -294,6 +310,17 @@ AlertDialog(
     child: const Text("Content"),
   ),
 );
+
+// Build Error: 2 files found with path 'lib/arm64-v8a/libc++_shared.so' from inputs...
+// Solution: Add this code in 'android/app/build.gradle'
+android{
+  packagingOptions {
+    pickFirst 'lib/x86/libc++_shared.so'
+    pickFirst 'lib/x86_64/libc++_shared.so'
+    pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+    pickFirst 'lib/arm64-v8a/libc++_shared.so'
+  }
+}
 
 ```
 	
