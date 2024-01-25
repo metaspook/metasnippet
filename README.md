@@ -305,6 +305,11 @@ void setState(fn) {
   if (mounted) super.setState(fn);
 }
 
+// Exit app on Back button press.
+SystemNavigator.pop();
+OR
+SystemChannels.platform.invokeMethod<void>('SystemNavigator.pop');
+
 // Resize an AlertDialog
 AlertDialog(
   insetPadding: const EdgeInsets.all(10),
