@@ -263,6 +263,10 @@ flutter pub cache clean
 #### Solutions
 ```dart
 
+// Get a file's name.
+final file = File(path);
+final fileName = file.uri.pathSegments.last;
+
 // List | conversion duplicate elements to unique elements
 List<int> ids = [1, 4, 4, 4, 5, 6, 6];
 //^ using toSet(), toList() methods
