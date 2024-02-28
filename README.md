@@ -263,6 +263,10 @@ flutter pub cache clean
 #### Solutions
 ```dart
 
+// 'padRight' filled with unicode 'Figure Space' character to
+// maintain alignment see here: https://emptycharacter.com
+final prefix = 'Chapter: ${(index + 1).toString().padRight(chapters.length.length,'\u2007')}';
+
 // Get a file's name.
 final file = File(path);
 final fileName = file.uri.pathSegments.last;
