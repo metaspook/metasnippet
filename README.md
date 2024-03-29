@@ -25,6 +25,7 @@ Input : Keyboard.
 BaaS - Backend as a service
 CaaS - Container as a service
 SaaS - Software as a service
+PaaS - Platform as a service
 PUP (Potentially Unwanted Products)
 MVP (Minimum Viable Product).
 AMPPS = Apache, MySQL/MongoDB/SQLite, PHP/Perl/Python and Softaculous (auto-installer) + SQLite, FTP [Cross Platform][Freemium Open-Source]
