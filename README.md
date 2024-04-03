@@ -23,6 +23,7 @@ Output: Text.
 Input : Keyboard.
 
 BaaS - Backend as a service
+BaaS - Banking-as-a-service
 CaaS - Container as a service
 SaaS - Software as a service
 PaaS - Platform as a service
