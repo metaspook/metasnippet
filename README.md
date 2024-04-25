@@ -78,6 +78,12 @@ OR
 ```batch
 :: Prints list of semicolon separated paths.
 echo %path:;=&echo.%
+:: Prints list of semicolon separated paths.
+echo %path:;=&echo.%
+:: Set the JAVA_HOME variable via the command line
+setx /m JAVA_HOME "C:\Program Files\Java\jdk11.0.17.8"
+:: Find path of a command
+where java
 
 ```
 </details>
