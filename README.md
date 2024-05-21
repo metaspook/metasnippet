@@ -488,6 +488,18 @@ vulkaninfo
 ```
 </details>
 
+### Office Apps
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+
+```code
+## Page margins
+"Default" (1-inch), "Wide" (2-inch left and right, 1-inch top and bottom),
+"Narrow" (0.5-inch) or "Custom" (1.5-inch) margins.
+
+```
+</details>
+
 
 ### Git Snippet
 <details><summary>Click to collapse/fold.</summary><br/>
