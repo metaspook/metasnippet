@@ -266,6 +266,9 @@ flutter clean
 flutter pub cache repair
 # Clean Flutter project pub cache (Run from project directoy).
 flutter pub cache clean
+# Gradle Signing Report
+cd android
+./gradlew signingReport
 ```
 	
 #### Solutions
