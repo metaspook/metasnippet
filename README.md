@@ -268,14 +268,19 @@ flutter pub cache repair
 flutter pub cache clean
 ## Gradle commands
 cd android
-# Fix Build Error: "It is currently in use by another Gradle instance"
-./gradlew --stop
 # Upgrade version
 gradlew wrapper --gradle-version=7.6.1
 gradlew wrapper --gradle-version=latest
 ./gradlew wrapper --gradle-version latest
 # Get signing Report
 ./gradlew signingReport
+# Fix Build Errors:
+# - It is currently in use by another Gradle instance
+./gradlew --stop
+# - Timeout of X reached waiting for exclusive access to file: Gradle
+# - delete %USERPROFILE%\.gradle (Windows) OR  $HOME/.gradle/ (MacOS/Linux)
+# - Just run the app OR Enter following command to redownload gralde dependencies.
+./gradlew 
 
 ```
 	
