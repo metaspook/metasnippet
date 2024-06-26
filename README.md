@@ -445,10 +445,16 @@ void main() {
 (optional) "PUB_ENVIRONMENT": "flutter_cli:get",
 (optional) "PUB_CACHE": "%LocalAppData%\Pub\Cache"
 (optional) "PUB_HOSTED_URL": "https://pub.dev"
-// Java Path MacOS Android Studio Hedgehog-Koala tested
-// add the folloing in ~/.zshrc
+// MacOS Add the following in ~/.zshrc (Catalina+) OR ~/.bash_profile
+touch .zshrc
+// Open it with the TextEditor
+open -e .zshrc OR nano .zshrc
+// Add Java in Path (Android Studio Hedgehog-Koala tested)
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home/"
 // Restart terminal OR enter `source ~/.zshrc` for changes to take effect.
+// Add ADB + platform-tools in Path
+export PATH=$PATH:/Users/username/Library/Android/sdk/platform-tools/
+
 ```
 	
 </details>
