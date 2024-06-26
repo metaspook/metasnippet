@@ -1099,6 +1099,18 @@ Safari menu > Preferences > Advanced tab > check 'Show Develop menu in menu bar'
 ```
 </details>
 
+### MacOS
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```shell
+## Enable Hibernate mode
+# 0 (traditional sleep mode): fast wake up and sleep, saves disk space
+# 3 (default safe sleep mode): fast wake up and sleep, state is kept when losing power
+# 25 (hibernation): saves energy, state is kept when losing power
+You can see which mode your Mac uses with pmset -g | grep hibernatemode and change it with sudo pmset -a hibernatemode $mode.
+```
+</details>
+v
 ### Windows
 <details><summary>Click to collapse/fold.</summary><br/>
 	
