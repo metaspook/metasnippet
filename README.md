@@ -445,6 +445,10 @@ void main() {
 (optional) "PUB_ENVIRONMENT": "flutter_cli:get",
 (optional) "PUB_CACHE": "%LocalAppData%\Pub\Cache"
 (optional) "PUB_HOSTED_URL": "https://pub.dev"
+// Java Path MacOS Android Studio Hedgehog-Koala tested
+// add the folloing in ~/.zshrc
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home/"
+// Restart terminal OR enter `source ~/.zshrc` for changes to take effect.
 ```
 	
 </details>
