@@ -266,13 +266,28 @@ flutter clean
 flutter pub cache repair
 # Clean Flutter project pub cache (Run from project directoy).
 flutter pub cache clean
-# Gradle Signing Report
+## Gradle commands
 cd android
+# Fix Build Error: "It is currently in use by another Gradle instance"
+./gradlew --stop
+# Upgrade version
+gradlew wrapper --gradle-version=7.6.1
+gradlew wrapper --gradle-version=latest
+./gradlew wrapper --gradle-version latest
+# Get signing Report
 ./gradlew signingReport
+
 ```
 	
 #### Solutions
 ```dart
+// Error: Duplicate class kotlin.collections.jdk8.CollectionsJDK8Kt found in modules kotlin-stdlib-1.8.10
+// Add these on build.gradle version can be updated
+dependencies {
+    (...)
+    // Fix Duplicate class
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+}
 
 // HapticFeedback (light, medium, heavy)
 HapticFeedback.lightImpact();
