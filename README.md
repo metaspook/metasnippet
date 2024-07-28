@@ -286,6 +286,8 @@ gradlew wrapper --gradle-version=latest
 	
 #### Solutions
 ```dart
+// [go_router] PopScope not working on Android
+// https://github.com/flutter/flutter/issues/138525#issuecomment-1815292384
 // Error: Duplicate class kotlin.collections.jdk8.CollectionsJDK8Kt found in modules kotlin-stdlib-1.8.10
 // Add these on build.gradle version can be updated
 dependencies {
