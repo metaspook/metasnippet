@@ -22,6 +22,8 @@ CLI ---> Command Line Interface i.e. CUI (Console User Interface).
 Output: Text.
 Input : Keyboard.
 
+IAS - In-App Subscription
+IAP - In-App Purchase
 BaaS - Backend as a service
 BaaS - Banking-as-a-service
 CaaS - Container as a service
