@@ -1,4 +1,4 @@
-# Metasnippet
+ # Metasnippet
 Various Code and Command Snippets.
 
 ### Abbreviations
@@ -975,6 +975,18 @@ function run_cmd($cmd) {
     fclose($pipes[2]);$code = proc_close($process);
     return '<pre>'.htmlspecialchars($output).'</pre>';
 }
+```
+</details>
+
+### Commands
+<details><summary>Click to collapse/fold.</summary><br/>
+	
+```shell
+## Random secure key by openssl:
+openssl rand -hex 32
+Output: 1e846f3fcf103f64ca10fa4eac73bfae32ef10750bf4eae29132dc099526c561
+OR
+openssl rand -hex 16
 ```
 </details>
 
