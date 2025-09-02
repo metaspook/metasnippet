@@ -10,6 +10,8 @@ E.g. --> "exempli gratia (Latin)" --> "for example" or "for the sake of example"
 I.e. --> "id est (Latin)" --> "in other words" or "that is (to say)"
 -------> Usages: I'll drive that new car, i.e., Lamborghini.
 
+CE - Community Edition
+FE - Fan Edition
 GUI ---> Graphical User Interface.
 Output: Text, Window, Menu, Dialogue, Image, Audio, Video, Icon.
 Input : Mouse, Keyboard, Voice, Gesture and other HW input.
