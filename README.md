@@ -39,7 +39,10 @@ WAMP = Windows, Apache, MySQL, and PHP + phpMyAdmin + MariaDB + Adminer + PhpSys
 MAMP = macOS, Apache/Nginx, PHP, Python, Perl or Ruby [macOS and Windows][Freemium Open-Source]
 LAMP = Linux, Apache, MySQL, and PHP, Pearl, Python [Linux OS][Free Open-Source]
 PODO (Plain Old Dart Object).
-	
+EOS (End-of-Support): Marks the end of further technical support associated with a product or pointed version.
+EOL (End-of-Life): Marks the end of further major/minor/patches development and production of a product or pointed version.
+LGTM is a common acronym, particularly in software development, that stands for "looks good to me"
+
 ## User Log state form conventions.
 Default : "Sign up"    == "Register"    == "Create an account"
 Process : "Signing up" == "Registering" == "Creating an account"
