@@ -275,7 +275,9 @@ flutter pub cache repair
 flutter pub cache clean
 ## Gradle commands
 cd android
-# Upgrade version
+# Upgrade version (see more in gradle release notes).
+#-- Also update in appDir/android/settings.gradle > com.android.application)
+./gradlew wrapper --gradle-version=8.13 && ./gradlew wrapper
 gradlew wrapper --gradle-version=7.6.1
 gradlew wrapper --gradle-version=latest
 ./gradlew wrapper --gradle-version latest
