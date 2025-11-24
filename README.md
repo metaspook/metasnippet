@@ -273,6 +273,8 @@ flutter clean
 flutter pub cache repair
 # Clean Flutter project pub cache (Run from project directoy).
 flutter pub cache clean
+## Get latest NDK version
+https://developer.android.com/ndk/downloads#stable-downloads
 ## Gradle commands
 cd android
 # Upgrade version (see more in gradle release notes).
