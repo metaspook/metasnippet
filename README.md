@@ -275,6 +275,8 @@ flutter pub cache repair
 flutter pub cache clean
 ## Get latest NDK version
 https://developer.android.com/ndk/downloads#stable-downloads
+## Lates proguard-android-optimize
+https://android.googlesource.com/platform/sdk/%2B/master/files/proguard-android-optimize.txt
 ## Gradle commands
 cd android
 # Upgrade version (see more in gradle release notes).
