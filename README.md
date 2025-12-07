@@ -42,6 +42,15 @@ PODO (Plain Old Dart Object).
 EOS (End-of-Support): Marks the end of further technical support associated with a product or pointed version.
 EOL (End-of-Life): Marks the end of further major/minor/patches development and production of a product or pointed version.
 LGTM is a common acronym, particularly in software development, that stands for "looks good to me"
+LWW - Last-Writer-Wins
+FWW - First-Write-Wins
+FIFO (First-In, First-Out)
+LIFO (Last-In, First-Out)
+FEFO (First-Expired, First-Out)
+LIFO & FIFO in Computing
+LIFO (Stack): Used for browser history, undo/redo functions, and function call management in memory.
+FIFO (Queue): Used in OS process scheduling, disk management, and network packet handling for fairness and order.
+
 
 ## User Log state form conventions.
 Default : "Sign up"    == "Register"    == "Create an account"
