@@ -282,6 +282,8 @@ flutter clean
 flutter pub cache repair
 # Clean Flutter project pub cache (Run from project directoy).
 flutter pub cache clean
+# Dart 3.11, we introduce the command pub cache gc that iterates over all “living” projects, marks all package versions they depend on, and deletes the rest. This can help you reclaim valuable disk space.
+dart pub cache gc
 ## Get latest NDK version
 https://developer.android.com/ndk/downloads#stable-downloads
 ## Lates proguard-android-optimize
