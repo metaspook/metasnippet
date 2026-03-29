@@ -50,6 +50,12 @@ FEFO (First-Expired, First-Out)
 LIFO & FIFO in Computing
 LIFO (Stack): Used for browser history, undo/redo functions, and function call management in memory.
 FIFO (Queue): Used in OS process scheduling, disk management, and network packet handling for fairness and order.
+CONTR (Controller)
+CONTX (Context)
+CTRL (Control)
+MCU: Short for Microcontroller Unit. This is the standard term used by engineers when referring to the small "brain" chips inside electronics.
+PLC: Short for Programmable Logic Controller, used specifically in industrial automation and manufacturing.
+BMC: Short for Baseboard Management Controller, a specialized service processor that monitors the physical state of a computer or server. 
 
 
 ## User Log state form conventions.
