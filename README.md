@@ -707,6 +707,11 @@ git diff                                     # All unstaged file changes from la
 git diff [<FILE>]                            # All/Specific unstaged file changes from last commit.
 git diff [<COMMIT_ID>]                       # Changes from specific commit to last commit or staged changes.
 git diff [<OLD_COMMIT_ID>] [<NEW_COMMIT_ID>] # Changes from specific commit to specific commit.
+Get latest commit hash
+Full Hash: git log -1 --format="%H"  OR git rev-parse HEAD OR git rev-parse <branch_name>
+Short Hash: git log -1 --format="%h"
+Full Hash:Short Hash (typically 7 characters): git rev-parse --short HEAD
+Specific Branch: To get the last hash of a different branch, replace HEAD with the branch name (e.g., git rev-parse main).Remote Repositories: To see the last hash on a remote without downloading the full history, use git ls-remote origin HEAD
 
 # Backup & Restore
 ## Backup repo from a old REMOTE_URL
